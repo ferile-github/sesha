@@ -15,3 +15,4 @@ Please see the changelog.md in sesha-child for commit history
 - run 'npm install' inside the sesha-child folder to install dependancies, and then run 'gulp' to build and watch CSS and JS
 - run 'gulp deploy' to copy up files to your FTP location of choice, just make sure to configure it first in the gulpfile.js, with your FTP details
 - run 'gulp production' to just generate a production ready version of your theme
+- Make sure to rename the 'sesha-child' folder to something you want for your website, and edit the style.css file to reflect this too

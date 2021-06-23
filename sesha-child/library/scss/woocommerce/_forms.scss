@@ -1,0 +1,85 @@
+// Forms
+// --------------------------------------------------
+.form-row {
+
+	label {
+
+	}
+
+	label.hidden {
+		visibility: hidden;
+	}
+
+	label.inline {
+		display: inline;
+	}
+
+	.required {
+		color: $danger;
+		font-weight: $font-weight-bold;
+		border: 0;
+	}
+
+	textarea {
+		height: 150px;
+	}
+
+	.select2-container {
+		width: 100%;
+		line-height: 2em;
+	}
+
+	&.woocommerce-invalid {
+		label {
+			color: $danger;
+		}
+		.select2-container,
+		input.input-text,
+		select {
+			border-color: $danger;
+		}
+	}
+
+	&.woocommerce-validated {
+		.select2-container,
+		input.input-text,
+		select {
+			border-color: $green;
+		}
+	}
+
+}
+
+
+form.login,
+form.checkout_coupon,
+form.register {
+
+}
+
+ul#shipping_method {
+	list-style: none outside;
+	margin: 0;
+	padding: 0;
+
+	li {
+		margin: 0;
+		padding: 0.25em 0 0.25em 22px;
+		text-indent: -22px;
+		list-style: none outside;
+		input {
+			margin: 3px 0.5ex;
+		}
+		label {
+			display: inline;
+		}
+	}
+
+	.amount {
+		font-weight: $font-weight-bold;
+	}
+}
+
+p.woocommerce-shipping-contents {
+	margin: 0;
+}

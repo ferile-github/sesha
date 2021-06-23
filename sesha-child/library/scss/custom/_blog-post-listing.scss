@@ -1,0 +1,80 @@
+// Blog Post Listing
+// ----------------------------------------------------------------
+.post-listing__item {
+	position: relative;
+}
+
+	.post-edit-link {
+		@extend .btn;
+		@extend .btn-sm;
+		@extend .btn-secondary;
+
+		.post-listing__item &,
+		.post-single__item & {
+			position: absolute;
+			top: 0;
+			right: 0;
+			opacity: 0;
+		}
+
+		.post-listing__item:hover &,
+		.post-single__item:hover & {
+			opacity: 1;
+		}
+	}
+
+	.entry-date {
+		font-weight: $font-weight-bold;
+	}
+
+	.post-listing__thumbnail {
+		@include media-breakpoint-only(xs) {
+			margin-bottom: $m-md;
+			margin: 0 auto;
+			display: block;
+		}
+	}
+
+	.post-listing__header {
+		@extend .h5;
+	}
+	.post-listing__header {
+		margin-bottom: $m-xs;
+		padding-bottom: $m-xs;
+		border-bottom: solid $border-width $border-color;
+	}
+	.post-listing__meta {
+		margin-bottom: $m-sm;
+	}
+
+
+// Grid Layout
+// ----------------------------------------------------------------
+@include media-breakpoint-up(sm) {
+	.blog-post-listing-grid {
+		.post-listing__header {
+			min-height: 3rem;
+		}
+	}
+}
+
+
+
+// Row Layout
+// ----------------------------------------------------------------
+.blog-post-listing-row {
+	.post-listing__item {
+		padding-bottom: $m-lg;
+		margin-bottom: $m-lg;
+		border-bottom: solid $border-width $border-color;
+	}
+}
+
+
+
+
+
+// Post Pagination
+// ----------------------------------------------------------------
+.pagination__posts {}
+

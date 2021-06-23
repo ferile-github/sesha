@@ -1,0 +1,282 @@
+// Product Display Page - Single product
+// --------------------------------------------------
+div.product {
+	overflow: hidden;
+
+	> span.onsale {
+		top: 12px;
+		left: -25px;
+	}
+	.product_title {
+		@extend .h2;
+		margin-bottom: $m-sm;
+	}
+
+	p.stock {
+		font-size: 0.9rem;
+	}
+
+	.stock {
+		color: $success;
+	}
+
+	.out-of-stock {
+		color: $danger;
+	}
+
+	.product_meta {
+		display: flex;
+		font-size: .9rem;
+		flex-direction: column;
+	}
+
+	div.summary {
+
+	}
+
+	div.social {
+		text-align: right;
+		margin: 0 0 1em;
+
+		span {
+			margin: 0 0 0 2px;
+
+			span {
+				margin: 0;
+			}
+
+			.stButton .chicklets {
+				padding-left: $m-md;
+				width: 0;
+			}
+		}
+
+		iframe {
+			float: left;
+			margin-top: 3px;
+		}
+	}
+
+	.nav-item.active .nav-link {
+	  color: $nav-tabs-link-active-color;
+	  background-color: $nav-tabs-link-active-bg;
+	  border-color: $nav-tabs-link-active-border-color;
+	}
+
+	.woocommerce-tabs {
+		.panel {
+			padding: $m-sm 0 0 0;
+			> h2 {
+				@include visually-hidden();
+			}
+		}
+	}
+
+	p.cart {
+		margin-bottom: $m-sm;
+	}
+
+	.size-guide-button__wrapper {
+	}
+		.size-guide-button {
+			margin-bottom: $m-sm;
+		}
+
+	// Add to Cart button and quantity
+	form.cart {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: $m-sm;
+		justify-content: flex-start;
+		align-items: center;
+		justify-content: center;
+
+		@include media-breakpoint-down(sm) {
+			div.quantity {
+
+			}
+			.single_add_to_cart_button {
+				width: 100%;
+			}
+		}
+
+		@include media-breakpoint-up(sm) {
+			div.quantity {
+				flex: 1;
+				margin-right: $m-xs;
+			}
+			.single_add_to_cart_button {
+				flex: 2;
+			}
+		}
+
+		table {
+
+			td {
+				padding-left: 0;
+			}
+
+			div.quantity {
+				float: none;
+				margin: 0;
+			}
+
+			small.stock {
+				display: block;
+				float: none;
+			}
+		}
+
+		.variations {
+			border: 0;
+			margin-bottom: $m-xs;
+			width: 100%;
+
+			td,
+			th {
+				border: 0;
+				display: block;
+			}
+
+			label {
+				font-weight: $font-weight-bold;
+			}
+
+
+			td.label {
+				width: 20%;
+				padding-top: $m-xs;
+				padding-right: $m-md;
+			}
+
+			td.value {
+				display: flex;
+				select {
+					margin-right: $m-sm;
+					max-width: 300px;
+				}
+			}
+		}
+
+		.variations_button {
+			display: flex;
+
+		}
+
+		.woocommerce-variation-description p {
+			margin-bottom: $m-md;
+		}
+
+		.reset_variations {
+			align-self: center;
+			display: none;
+			@extend .btn;
+			@extend .btn-danger;
+			@extend .btn-sm;
+		}
+
+		.wc-no-matching-variations {
+			display: none;
+		}
+
+		.group_table {
+			td.woocommerce-grouped-product-list-item__label {
+				padding-right: 1em;
+				padding-left: 1em;
+			}
+
+			td {
+				vertical-align: top;
+				padding-bottom: 0.5em;
+				border: 0;
+			}
+
+			td:first-child {
+				width: 4em;
+				text-align: center;
+			}
+
+			.wc-grouped-product-add-to-cart-checkbox {
+				display: inline-block;
+				width: auto;
+				margin: 0 auto;
+				transform:scale(1.5, 1.5);
+			}
+		}
+	}
+
+	.related.products {
+		.product__short-desc {
+			@include visually-hidden();
+		}
+	}
+}
+
+
+// PDP information
+// ----------------------------------------------------------------
+.no-pdp-tabs {
+	.woocommerce-Tabs-panel {
+		h2 {
+			@extend .h5;
+			margin-bottom: $m-xs;
+		}
+	}
+}
+
+
+
+// PDP no product preview zoom
+// ----------------------------------------------------------------
+.no-product-zoom {
+	#woocommerce-product-preview {
+		.js-gallery-image {
+			cursor: default;
+		}
+	}
+}
+
+
+
+// Gallery thumbnails
+// --------------------------------------------------
+.product_gallery__menu {}
+
+	.product_gallery__item {
+		padding: 5px;
+		a {
+			transition: 500ms $transition all;
+			display: block;
+			opacity: .3;
+			&:hover {
+				opacity: .8;
+			}
+		}
+		&.is-active a {
+			cursor: default;
+			opacity: 1;
+		}
+	}
+
+
+
+// Grid Gallery
+// --------------------------------------------------
+.has-grid-thumbnail-gallery {
+	.woocommerce-product-gallery {
+		display: block;
+	}
+
+	.product_gallery__item {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.product_gallery__thumbnail {
+		width: 70%;
+		max-width: 250px;
+		display: block;
+		margin: 0 auto;
+	}
+}

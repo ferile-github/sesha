@@ -1,0 +1,140 @@
+// Global Styles
+// --------------------------------------------------
+
+// Price
+// --------------------------------------------------
+.price {
+	display: block;
+	margin-bottom: $m-xs;
+	font-weight: $font-weight-bold;
+	color: $black;
+	font-size: $font-size-lg;
+	text-align: right;
+
+	del {
+		color: $gray-500;
+		font-size: 80%;
+	}
+	ins {
+		text-decoration: none;
+	}
+
+	.from {
+
+	}
+}
+
+// On Sale badge
+// --------------------------------------------------
+span.onsale {
+	position: absolute;
+	z-index: $zindex-onsale-tag;
+	background: $success;
+	color: $white;
+	font-size: .9rem;
+	transform: rotate(-45deg);
+	width: 100px;
+	text-align: center;
+}
+
+// Count for categories
+// --------------------------------------------------
+mark.count {
+	background: none;
+}
+
+
+// Loading overlay
+// --------------------------------------------------
+.blockUI.blockOverlay {
+	position: relative;
+	@include loader();
+}
+
+.loader {
+	@include loader();
+}
+
+
+
+
+// Demo Store Notice
+// --------------------------------------------------
+p.demo_store,
+.woocommerce-store-notice {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: 0;
+	width: 100%;
+	font-size: 1em;
+	padding: 1em 0;
+	text-align: center;
+	background-color: $primary;
+	z-index: 99998;
+	box-shadow: 0 1px 1em rgba(0, 0, 0, 0.2);
+	display: none;
+
+	a {
+		text-decoration: underline;
+	}
+}
+
+.admin-bar p.demo_store {
+	top: 32px;
+}
+
+
+// Remove product button
+// --------------------------------------------------
+a.remove {
+	$box: 24px;
+
+	display: inline-block;
+	font-size: $box;
+	height: $box;
+	width: $box;
+	text-align: center;
+	line-height: 1;
+	border-radius: 100%;
+	color: $white !important; // Required for default theme compatibility
+	background: $danger;
+	text-decoration: none;
+	font-weight: $font-weight-bold;
+	border: 0;
+
+	&:hover {
+		color: $white !important; // Required for default theme compatibility
+		background: darken($danger, 20%);
+	}
+}
+
+// Quantity buttons - PDP
+// --------------------------------------------------
+div.quantity {
+	display: flex;
+	justify-content: center;
+
+	.js-minus {
+		@include border-start-radius($border-radius);
+		@include border-end-radius(0);
+	}
+	.js-plus {
+		@include border-end-radius($border-radius);
+		@include border-start-radius(0);
+	}
+	.input-text.qty {
+		width: 4rem;
+		padding: 4px;
+		text-align: center;
+		&::-webkit-inner-spin-button,
+		&::-webkit-outer-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+
+		@include border-radius(0);
+	}
+}
+

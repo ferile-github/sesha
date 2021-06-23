@@ -1,0 +1,47 @@
+{
+	"name": "sesha-wordpress-theme-build",
+	"version": "1.0.0",
+	"description": "A simple Gulp 4 build for modern web development.",
+	"keywords": [
+		"gulp",
+		"gulp-starter-kit",
+		"sass",
+		"scss",
+		"babel",
+		"browser-sync",
+		"autoprefixer",
+		"modern-web-dev",
+		"sourcemaps",
+		"es6-modules"
+	],
+	"scripts": {
+		"start": "gulp",
+		"build": "gulp build"
+	},
+	"author": "Andy Fairlie - SearchBAR",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://bitbucket.org/ferile-bitbucket/sesha-wordpress-framework/"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.6.2",
+		"@babel/preset-env": "^7.6.2",
+		"browser-sync": "^2.26.7",
+		"del": "^5.1.0",
+		"gulp": "^4.0.2",
+		"gulp-concat": "^2.6.1",
+		"gulp-filter": "^6.0.0",
+		"gulp-notify": "^3.2.0",
+		"gulp-plumber": "^1.2.1",
+		"gulp-rename": "^1.4.0",
+		"gulp-uglify": "^3.0.2"
+	},
+	"dependencies": {
+		"axios": "^0.21.1",
+		"fs-extra": "^8.1.0"
+	},
+	"engines": {
+		"node": ">=8"
+	}
+}

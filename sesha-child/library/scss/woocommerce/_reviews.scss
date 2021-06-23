@@ -1,0 +1,108 @@
+// Product Reviews
+// --------------------------------------------------
+.woocommerce-Reviews-title,
+.comment-reply-title {
+	@extend .h4;
+	margin-bottom: $m-sm;
+	display: block; //use of a span tag
+}
+
+#reviews {
+
+	h2 small {
+		float: right;
+		color: $gray-500;
+		font-size: 15px;
+		margin: 10px 0 0;
+
+		a {
+			text-decoration: none;
+			color: $gray-500;
+		}
+	}
+
+	h3 {
+		margin: 0;
+	}
+
+	#respond {
+		margin: 0;
+		border: 0;
+		padding: 0;
+	}
+
+	#comment {
+		height: 75px;
+	}
+
+	#comments {
+		.add_review {
+			@include clearfix();
+		}
+
+		h2 {
+			clear: none;
+		}
+
+		ol.commentlist {
+			@include clearfix();
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			background: none;
+			list-style: none;
+
+			li {
+				padding: 0;
+				margin: 0 0 20px;
+				border: 0;
+				position: relative;
+				background: 0;
+				border: 0;
+
+				.meta {
+					color: $gray-500;
+					font-size: 0.75em;
+				}
+
+				img.avatar {
+					position: absolute;
+					width: 70px;
+				}
+
+				.comment-text {
+					padding-left: 80px;
+					border-bottom: solid 1px $border-color;
+					@include clearfix();
+
+					p {
+						margin: 0 0 .5rem;
+					}
+					p.meta {
+						font-size: 0.83em;
+					}
+				}
+			}
+
+			ul.children {
+				list-style: none outside;
+				margin: 20px 0 0 50px;
+
+				.star-rating {
+					display: none;
+				}
+			}
+
+			#respond {
+				border: 1px solid $border-color;
+				border-radius: 4px;
+				padding: 1em 1em 0;
+				margin: 20px 0 0 50px;
+			}
+		}
+
+		.commentlist > li::before {
+			content: "";
+		}
+	}
+}

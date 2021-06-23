@@ -1,0 +1,23 @@
+/******************************************************************
+	Theme Name: Sesha Child Starter Theme
+	Theme URI: https://website.com
+	Description: A starter theme for Searchbar Wordpress sites, now with Woocommerce and Bootstrap 4.0
+	Author: Andy Fairlie
+	Author URI: https://searchbar.co.za
+	Template:     sesha
+	Text Domain:  sesha
+	Version: 4.1.3
+	Requires at least: 5.0
+	Tested up to: 5.6.1
+	Requires PHP: 7.0
+	License: GNU General Public License v2 or later
+	License URI: http://www.gnu.org/licenses/gpl-2.0.html
+		Tags: blog, e-commerce, grid-layout, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, block-styles, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, theme-options, threaded-comments, wide-blocks
+*/
+
+.wp-caption {}
+.wp-caption-text {}
+.alignright,.alignleft,.aligncenter {}
+.sticky {}          /* DO NOT EDIT THIS */
+.gallery-caption {} /* THESE ARE USELESS */
+.bypostauthor {}    /* THEY ARE ONLY TO KEEP THEME CHECK HAPPY */

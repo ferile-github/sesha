@@ -1,0 +1,44 @@
+body.login {
+	background: #474052;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+	h1 a {
+		background: url('../images/login-logo.png') no-repeat top center;
+		width: 326px;
+		height: 67px;
+		text-indent: -9999px;
+		overflow: hidden;
+		display: block; 
+	}
+
+	form .input {
+		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+		font-weight: 200;
+		font-size: 24px;
+		width: 97%;
+		padding: 3px;
+		margin-top: 2px;
+		margin-right: 6px;
+		margin-bottom: 16px;
+		border: 1px solid #E5E5E5;
+		background: #FBFBFB;
+		outline: none;
+		box-shadow: inset 1px 1px 2px rgba(200,200,200,0.2);
+	}
+
+	#backtoblog a, #nav a {
+		color: #fde09c;
+		&:hover {
+			color: white;
+		}
+	}
+
+	#wp-submit {
+		background: #f07371;
+		border-color: #be5351;
+		box-shadow: 0 1px 0 #be5351;
+		color: #fff;
+		text-decoration: none;
+		text-shadow: 0 -1px 1px #be5351, 1px 0 1px #be5351, 0 1px 1px #be5351, -1px 0 1px #be5351;		
+	}
+}

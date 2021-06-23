@@ -1,0 +1,137 @@
+// Generic Widget styles
+// ----------------------------------------------------------------
+$widget-spacing : $m-sm;
+$item-spacing : 5px;
+
+// Sidebar Widgets
+// ----------------------------------------------------------------
+.sidebar__heading {
+	@extend .h5;
+	margin-bottom: $widget-spacing;
+}
+
+.sidebar__item  {
+	margin-bottom: $widget-spacing;
+	padding-bottom: $widget-spacing;
+	border-bottom: solid 1px $border-color;
+
+	ul, ol {
+		@include menu-mixin;
+	}
+	li {
+		display: flex;
+		justify-content: space-between;
+	}
+	a {
+		display: block;
+		font-size: .9rem;
+	}
+
+	p {
+		margin-bottom: $item-spacing;
+	}
+
+	select, table, input[type=text] {
+		width: 100%;
+	}
+}
+
+
+// Specific widgets - general styling
+// ----------------------------------------------------------------
+.widget_categories, .widget_recent_entries, .widget_meta, .widget_recent_entries, .widget_archive {
+	li {
+		border-left: solid 2px $primary;
+		padding-left: 10px;
+		margin-bottom: 2px;
+		margin-bottom: $item-spacing;
+		display: flex;
+		justify-content: space-between;
+
+		a {
+			display: block;
+		}
+	}
+}
+
+
+.widget_recent_comments {
+	li {
+		display: block; // Not a flex item 'ere
+	}
+
+	a {
+		display: inline-block;
+	}
+}
+
+
+
+
+// Calendar Widget
+// ----------------------------------------------------------------
+.widget_calendar {
+	$cellheight : 1.8em;
+	caption {
+		font-weight: $font-weight-bold;
+	}
+	table {
+		width: 100%;
+		table-layout: fixed;
+	}
+	thead th, caption {
+		font-weight: $font-weight-bold;
+	}
+	tbody {
+		td {
+			border: solid 1px $border-color;
+			text-align: center;
+			padding: 0;
+			height: $cellheight;
+			line-height: $cellheight;
+		}
+		.pad {
+			background-color: $light;
+		}
+		a {
+			height: $cellheight;
+			line-height: $cellheight;
+			display: block;
+			background: $primary;
+			color: $white;
+			text-decoration: none;
+			&:hover {
+				background-color: $link-hover-color;
+			}
+		}
+	}
+
+	tfoot {
+		td {
+			padding-top: 10px;
+		}
+		a {
+			margin-top: 10px;
+			@extend .btn;
+			@extend .btn-secondary;
+			display: block;
+		}
+	}
+	tfoot td {
+		&#next {
+			text-align: right;
+		}
+	}
+}
+
+.wp-calendar-nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	a {
+		@extend .btn;
+		@extend .btn-secondary;
+		@extend .btn-sm;
+	}
+}

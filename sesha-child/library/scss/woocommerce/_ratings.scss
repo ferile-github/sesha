@@ -1,0 +1,95 @@
+$star-size: 1.5rem;
+// Star Ratings
+// --------------------------------------------------
+.star-ratings__wrapper {
+	display: flex;
+	align-items: center;
+	.star:before {
+		color: $orange;
+		@extend .fa;
+		content: $fa-var-star;
+		font-size: $star-size;
+		margin-right: $m-sm;
+	}
+	.star-half:before {
+		color: $orange;
+		@extend .fa;
+		content: $fa-var-star-half;
+		font-size: $star-size;
+	}
+}
+
+
+// PDP page
+// --------------------------------------------------
+.woocommerce-product-rating {
+	margin-bottom: $m-md;
+}
+.woocommerce-review-link {
+	display: none;
+}
+
+#review_form #respond {
+	p {
+		margin: $m-xs 0;
+	}
+
+	textarea {
+		width: 100%;
+		margin-bottom: $m-sm;
+	}
+}
+
+
+// Star Ratings on form
+// --------------------------------------------------
+p.stars {
+	a {
+		$box: $star-size;
+		position: relative;
+		height: $box;
+		width: $box;
+		text-indent: -999em;
+		display: inline-block;
+		text-decoration: none;
+		color: $orange;
+
+		&::before {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: $box;
+			height: $box;
+			line-height: $box;
+			@extend .fa;
+			content: $fa-var-star-o;
+			text-indent: 0;
+			font-size: $box
+		}
+
+		&:hover ~ a::before {
+			content: $fa-var-star-o;
+		}
+	}
+
+	&:hover a::before {
+		content: $fa-var-star;
+	}
+
+	&.selected {
+		a.active {
+			&::before {
+				content: $fa-var-star;
+			}
+
+			~ a::before {
+				content: $fa-var-star-o;
+			}
+		}
+
+		a:not( .active )::before {
+			content: $fa-var-star;
+		}
+	}
+}

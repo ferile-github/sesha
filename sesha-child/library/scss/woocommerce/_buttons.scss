@@ -1,0 +1,24 @@
+.button:not(.alt) {
+	@extend .btn;
+	@extend .btn-secondary;
+}
+.button.alt {
+	@extend .btn;
+	@extend .btn-primary;
+}
+
+.cart .button {
+	&:before {
+		@extend .fa;
+		content: $fa-var-shopping-cart;
+		margin-right: $m-sm;
+	}
+}
+
+.button.alt.single_add_to_cart_button {
+	@extend .btn-lg;
+}
+
+a.added_to_cart {
+
+}

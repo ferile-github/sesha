@@ -1,0 +1,73 @@
+// Side Menu
+// ----------------------------------------------------------------
+.woocommerce-MyAccount-navigation {
+	.nav-link.is-active {
+		color: $nav-pills-link-active-color;
+		@include gradient-bg($nav-pills-link-active-bg);
+	}
+}
+
+// My account
+// ----------------------------------------------------------------
+ .woocommerce-account {
+	ol.commentlist.notes li.note {
+		p.meta {
+			font-weight: $font-weight-bold;
+			margin-bottom: 0;
+		}
+
+		.description p:last-child {
+			margin-bottom: 0;
+		}
+	}
+	ul.digital-downloads {
+		margin-left: 0;
+		padding-left: 0;
+
+		li {
+			list-style: none;
+			margin-left: 0;
+			padding-left: 0;
+
+			.count {
+				float: right;
+			}
+		}
+	}
+}
+
+
+.woocommerce-Address {
+	position: relative;
+
+	.edit {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		@extend .btn;
+		@extend .btn-secondary;
+		@extend .btn-sm;
+	}
+
+	address {
+		background-color: $light;
+		padding: $m-sm;
+		@if $enable-rounded {
+			border-radius: $input-border-radius;
+		}
+		margin-bottom: 40px;
+	}
+}
+
+// Account Login
+// ----------------------------------------------------------------
+.woocommerce-account-login {
+	width: 100%;
+	.login, .register {
+		background-color: $light;
+		padding: $m-sm;
+		@if $enable-rounded {
+			border-radius: $input-border-radius;
+		}
+	}
+}

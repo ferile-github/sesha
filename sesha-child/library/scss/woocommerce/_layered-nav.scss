@@ -1,0 +1,44 @@
+// Sidebar Filters - Widgets
+// --------------------------------------------------
+.woocommerce-widget-layered-nav-list {
+	@extend .nav;
+	flex-direction: column;
+
+	.woocommerce-widget-layered-nav-list__item {
+		a {
+			@include filter-checkbox();
+		}
+	}
+	.woocommerce-widget-layered-nav-list__item--chosen {
+		a {
+			@include filter-checkbox-checked();
+		}
+	}
+}
+
+.woocommerce-widget-layered-nav-dropdown__submit {
+	margin-top: $m-md;
+}
+
+
+.widget_layered_nav_filters ul {
+	@extend .nav;
+	display: flex;
+	flex-wrap: wrap;
+
+	li {
+		margin: 0 2px 5px;
+		a {
+			@extend .btn;
+			@extend .btn-default;
+			@extend .btn-sm;
+		}
+		a:before {
+			@extend .fa;
+			content: $fa-var-close;
+			margin-right: 5px;
+			color: $danger;
+			text-decoration: none;
+		}
+	}
+}

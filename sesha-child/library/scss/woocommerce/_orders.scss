@@ -1,0 +1,63 @@
+// Order details - confirmation page
+// --------------------------------------------------
+@include media-breakpoint-up(sm) {
+	ul.order_details {
+		list-style: none;
+		display: flex;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		width: 100%;
+
+
+		li {
+			margin: 0 $m-sm $m-md;
+			padding: 0;
+			text-transform: uppercase;
+			font-size: 0.715em;
+			border-right: 1px dotted $border-color;
+			flex: 1;
+
+			strong {
+				display: block;
+				font-size: 1.4em;
+				text-transform: none;
+				line-height: 1.5;
+			}
+
+			&:last-of-type {
+				border: none;
+			}
+		}
+	}
+}
+
+.wc-bacs-bank-details-account-name {
+    font-weight: $font-weight-bold;
+}
+
+.woocommerce-customer-details {
+    address {
+        font-style: normal;
+        margin-bottom: 0;
+        text-align: left;
+        width: 100%;
+    }
+
+    .woocommerce-customer-details--phone,
+    .woocommerce-customer-details--email {
+        margin: $m-xs 0;
+		&::before {
+			margin-right: 10px;
+		}
+    }
+
+    .woocommerce-customer-details--phone::before {
+        @include fa-icon();
+		content: $fa-var-phone;
+    }
+    .woocommerce-customer-details--email::before {
+        @include fa-icon();
+		content: $fa-var-envelope;
+    }
+}

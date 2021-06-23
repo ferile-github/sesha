@@ -1,0 +1,32 @@
+// FAQ Page
+// ----------------------------------------------------------------
+
+// Question
+.js-faq__question {
+	background-image: url('../svg/faq_plus.svg');
+	background-repeat:  no-repeat;
+	background-position: 98% center;
+	background-size: 18px 18px;
+	width: 100%;
+}
+
+// Answer
+.js-faq__answer {
+	max-height: 0;
+	overflow: hidden;
+	transition: 500ms $transition all;
+}
+	.faq__answer-padding {
+		padding-top: $m-sm;
+		padding-right: 40px;
+	}
+
+// Active State
+.js-faq__question-answer.is-active  {
+	.js-faq__question {
+		background-image: url('../svg/faq_minus.svg');
+	}
+	.js-faq__answer {
+		max-height: 500px;
+	}
+}

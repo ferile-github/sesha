@@ -1,0 +1,130 @@
+// Contact Page
+// ----------------------------------------------------------------
+.required {
+	color: $red;
+}
+
+// Investor Enquiries
+.wpcf7-form-control-wrap.your-enquiries {
+	background: $blue;
+	color: $white;
+	display: block;
+	padding: $m-sm;
+}
+
+
+.wpcf7-form {
+	label {
+		display: flex;
+		align-items: flex-start;
+		flex-direction: column;
+
+		br {
+			display: none;
+		}
+	}
+
+	select {
+		width: 100%;
+	}
+	select[multiple] {
+		height: 12rem;
+		overflow: hidden;
+	}
+}
+
+	.wpcf7-not-valid-tip  {
+		text-align: right;
+	}
+
+	.wpcf7-form-control-caption {
+		padding: 5px;
+		padding-left: 25%;
+		margin-top: -5px;
+		text-align: right;
+	}
+
+	.wpcf7-form-control-wrap {
+		width: 100%;
+	}
+
+	.wpcf7-textarea {
+		min-height: 150px;
+	}
+
+	span.wpcf7-list-item {
+		display: block;
+		margin: 0;
+	}
+
+	// Mailchimp checkbox field
+	.mc4wp-checkbox-contact-form-7 {
+		label {
+			display: flex;
+			align-items: center;
+
+		}
+	}
+
+
+
+	// Checkboxes
+	 .wpcf7-form-control-label-checkboxes {
+		margin: 0;
+		padding: 0;
+	}
+		.wpcf7-checkbox,
+		.wpcf7-radio	{
+
+			.wpcf7-list-item label {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+			}
+			input[type="radio"], input[type="checkbox"] {
+				margin: 0 10px 0 0;
+			}
+		}
+
+	.wpcf7-form-submit-wrapper {
+		text-align: center;
+		margin-top: 40px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+		div.wpcf7 span.ajax-loader {
+			background: url('../svg/spinner.svg') no-repeat center center;
+			background-size: 40px 40px;
+			width: 40px;
+			height: 40px;
+			display: block;
+		}
+
+		.wpcf7-submit {
+			@extend .btn;
+			@extend .btn-primary;
+			@extend .btn-lg;
+		}
+
+
+
+@include media-breakpoint-down(md) {
+	.wpcf7-form {
+		label {
+		}
+	}
+	.wpcf7-form-control-label {
+
+	}
+
+	.wpcf7-checkbox .wpcf7-list-item label,
+	.wpcf7-radio .wpcf7-list-item label {
+
+	}
+
+	.wpcf7-form p.wpcf7-form-control-label-checkboxes {
+		margin: 0;
+	}
+}

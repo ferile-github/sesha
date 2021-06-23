@@ -1,0 +1,279 @@
+// Mobile
+// ----------------------------------------------------------------
+@include media-breakpoint-down(md) {
+
+	// General
+	// ----------------------------------------------------------------
+	body {
+		padding-top: $masthead-height-mobile;
+	}
+	body.has-user-details-bar {
+		padding-top: calc(#{$masthead-height-mobile} + #{$masthead-user-messaging-height});
+	}
+	.site-header {
+		position: fixed;
+
+		.admin-bar & {
+			top: $wordpress-admin-bar-height-mobile;
+		}
+		.custom-logo,
+		.custom-logo__wrapper svg {
+			height: $masthead-logo-height-mobile;
+		}
+		// Branding
+		.branding__wrapper {
+			flex: 1 1 auto;
+		}
+			// Site logo
+			.custom-logo__wrapper {
+				flex: 1 1 auto;
+			}
+	}
+
+	.site-header__inner {
+		height: $masthead-height-mobile;
+		align-items: center;
+	}
+
+	// Toggle Menu
+	// ----------------------------------------------------------------
+	.navbar__toggle {
+		.fa-close {
+			display: none;
+		}
+		.has-navigation-active & {
+			.fa-close  {
+				display: inline-block;
+			}
+			.fa-bars  {
+				display: none;
+			}
+		}
+	}
+
+	// Search
+	// ----------------------------------------------------------------
+	.search__wrapper {
+		position: absolute;
+		z-index: $zindex-dropdown;
+		top: 100%;
+		right: 0;
+		left: 0;
+		background: $masthead-default-bg;
+		transition: all 200ms $transition;
+		border-bottom: solid 1px $masthead-default-border;
+		box-shadow: $box-shadow-dropdown;
+
+		@include make-dropdown();
+
+		.has-search-active &  {
+			@include show-dropdown();
+		}
+		.search__form {
+			padding: $dropdown-padding-mobile;
+		}
+	}
+
+
+	// User messaging
+	// ----------------------------------------------------------------
+	.member__wrapper {
+		height: $masthead-user-messaging-height;
+	}
+
+
+	// User details bar
+	// ----------------------------------------------------------------
+	.user-details__menu {
+		border-bottom: solid $border-width $masthead-default-border;
+		height: $navbar-link-height-mobile;
+		padding: 0 $navbar-padding-horizontal;
+	}
+
+		.user-details__item {
+			display: flex;
+		}
+			.user-details__text {
+				color: $user-details-text-color;
+			}
+			.user-details__link {
+				display: flex;
+				align-items: center;
+				border-bottom-width: $border-width;
+			}
+
+
+
+
+	// Menu Animations
+	// ----------------------------------------------------------------
+	.has-menu-animation {
+		transition: all $navbar-speed-mobile $transition;
+
+		.has-navigation-active & {
+			transform: translate3d(-$navbar-offset-mobile, 0, 0);
+		}
+	}
+
+	.overlay__mobile-menu {
+		@include make-site-overlay($zindex-menu-overlay);
+		.has-navigation-active & {
+			@include show-site-overlay();
+		}
+	}
+
+
+	// Shopping Cart
+	// ----------------------------------------------------------------
+	.cart-contents {
+		right: $masthead-height-mobile;
+	}
+		.btn-cart__close {
+			display: none;
+		}
+		.woocommerce-mini-cart,
+		.cart__wrapper {
+			max-height: 50vh;
+		}
+		.cart__wrapper {
+			position: absolute;
+			top: 100%;
+			right: 0;
+			left: 0;
+			transition: all 200ms $transition;
+			border-bottom: solid 1px $masthead-default-border;
+			box-shadow: $box-shadow-dropdown;
+
+			@include make-dropdown();
+
+			.has-cart-active &  {
+				@include show-dropdown();
+			}
+			.widget_shopping_cart_content {
+				padding: $dropdown-padding-mobile;
+			}
+		}
+
+
+	// Navigation Menus
+	// ----------------------------------------------------------------
+	.navbar-primary {
+		position: fixed;
+		z-index: $zindex-navbar;
+
+		display: flex;
+		flex-direction: column;
+
+		top: $masthead-height-mobile;
+		left: $navbar-offset-mobile;
+		right: 0;
+		bottom: 0;
+
+		height: 100vh;
+		width: 100vw - $navbar-offset-mobile;
+
+		transition: all $navbar-speed-mobile $transition;
+		transform: translate3d(100%, 0, 0);
+		overflow-y: scroll;
+		-webkit-overflow-scrolling: touch;
+		background-color: $navbar-bg;
+
+		.admin-bar & {
+			top: $wordpress-admin-bar-height-mobile + $masthead-height-mobile;
+		}
+		.has-user-details-bar & {
+			top: calc(#{$masthead-height-mobile} + #{$masthead-user-messaging-height});
+		}
+		.admin-bar.has-user-details-bar & {
+			top: calc(#{$wordpress-admin-bar-height-mobile} + #{$masthead-height-mobile} + #{$masthead-user-messaging-height});
+		}
+
+
+		.has-navigation-active & {
+			transform: translate3d(0, 0, 0);
+		}
+	}
+		.level-1-list {
+			display: flex;
+			flex-direction: column;
+		}
+
+
+	// Flyout menus
+	// ----------------------------------------------------------------
+	.level-2-wrapper,
+	.level-3-wrapper,
+	.level-4-wrapper {
+		transform: translate3d(100%, 0, 0);
+		position: absolute;
+		top: 0;
+		width: 100%;
+		display: none;
+
+		.is-expanded > & {
+			display: block;
+		}
+	}
+		.level-1-list,
+		.level-2-list,
+		.level-3-list  {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			transition: all $navbar-speed-mobile $transition;
+		}
+
+		.cascade-level-2 .level-1-list {
+			transform: translate3d(-100%, 0, 0);
+		}
+		.cascade-level-3 .level-1-list {
+			transform: translate3d(-200%, 0, 0);
+		}
+		.cascade-level-4 .level-1-list {
+			transform: translate3d(-300%, 0, 0);
+		}
+		.cascade-level-5 .level-1-list {
+			transform: translate3d(-300%, 0, 0);
+		}
+
+
+	// Menu Links
+	// ----------------------------------------------------------------
+	.menu-main-link {
+		padding: 0 $navbar-padding-horizontal;
+		border-bottom-width: $border-width;
+		height: $navbar-link-height-mobile;
+		text-align: left;
+	}
+
+	// Indicator Arrows
+	.menu-item-has-children > .menu-main-link,
+	.js-menu-back-button {
+		&:after {
+			@include fa-icon();
+		}
+	}
+
+	// Current item
+	// ----------------------------------------------------------------
+	.current-menu-parent > .menu-main-link,
+	.current-menu-parent > .menu-main-link:hover,
+	.current-menu-item > .menu-main-link,
+	.current-menu-item > .menu-main-link:hover {
+		color: $navbar-link-active-color;
+		background-color: $navbar-link-active-bg;
+	}
+
+	.menu-item-has-children > .level-1-link {
+		&:after {
+			content: $fa-var-chevron-right;
+		}
+	}
+
+	.js-menu-back-button {
+		&:after {
+			order: -1;
+			content: $fa-var-chevron-left;
+		}
+	}
+}

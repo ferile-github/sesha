@@ -1,0 +1,32 @@
+.spin {
+	@keyframes spin {
+		100% {
+			transform: rotate( 360deg );
+		}
+	}
+}
+
+.slideOutDown {
+	@include slideOutDown();
+}
+.zoomIn {
+	@include zoomIn();
+}
+.zoomOut {
+	@include zoomOut();
+}
+.slideInUp {
+	@include slideInUp();
+}
+.slideOutUp {
+	@include slideOutUp();
+}
+.rubberBand {
+	@include rubberBand();
+}
+.fadeIn {
+	@include fadeIn();
+}
+.fadeOut {
+	@include fadeOut();
+}

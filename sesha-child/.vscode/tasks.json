@@ -1,0 +1,20 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "gulp",
+			"task": "watch",
+			"script": "start",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "gulp watch",
+			"problemMatcher": [],
+			"label": "gulp: watch",
+			"runOptions": {
+				"runOn": "folderOpen"
+			}
+		}
+	]
+}

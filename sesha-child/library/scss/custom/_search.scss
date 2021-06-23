@@ -1,0 +1,18 @@
+// Search Form
+// =======================================================
+// Used in masthead and in widgets, search pages
+.search__form {
+	display: flex;
+	background: $white;
+	@include border-radius();
+	border: solid 1px $border-color;
+
+	.search__input {
+		flex: 1;
+		border: none;
+		&:focus {
+			box-shadow: none;
+		}
+	}
+	.search__button { flex : 1; max-width: 50px;}
+}

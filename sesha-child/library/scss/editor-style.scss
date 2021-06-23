@@ -1,0 +1,53 @@
+// Core variables and mixins
+@import "bootstrap-5/functions";
+@import "bootstrap-custom/colors";
+@import "bootstrap-5/variables";
+@import "bootstrap-custom/variables";
+@import "bootstrap-custom/mixins";
+@import "bootstrap-5/mixins";
+// Fonts
+@import "fontawesome-4.7/font-awesome";
+@import "custom/fonts";
+
+
+@import "bootstrap-5/root";
+@import "bootstrap-5/reboot";
+
+.editor-styles-wrapper {
+	font-family: inherit !important;
+	@import "bootstrap-custom/type";
+	@import "bootstrap-5/images";
+	@import "bootstrap-5/grid";
+}
+
+@import "bootstrap-custom/buttons";
+
+
+// Old School Wordpress MCE
+html .mceContentBody {
+	padding: 20px !important; // Add padding to the editor window
+}
+
+// Customise the Gutenberg Editor
+.wp-block {
+	max-width: map-get($grid-breakpoints, lg);
+
+	&[data-align="wide"] {
+		max-width: map-get($grid-breakpoints, xl);
+	}
+
+	&[data-align="full"] {
+		max-width: none;
+	}
+}
+
+
+
+.editor-post-title__block {
+	.editor-post-title__input {
+		font-family: $headings-font-family;
+		line-height: $headings-line-height;
+		color: $headings-color;
+		font-weight: $headings-font-weight;
+	}
+}

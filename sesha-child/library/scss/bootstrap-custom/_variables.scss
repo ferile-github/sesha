@@ -1,0 +1,417 @@
+//
+// Variables
+// --------------------------------------------------
+// Prefix for :root CSS variables
+$variable-prefix:             sb-;
+
+$wordpress-admin-bar-height: 32px;
+$wordpress-admin-bar-height-mobile: 46px;
+
+$transition : cubic-bezier(0.445, 0.050, 0.550, 0.950);
+$box-shadow-dropdown:         0 0.8rem 1rem rgba(0,0,0,.15);
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-caret:                true;
+$enable-rounded:              true;
+$enable-shadows:              false;
+$enable-gradients:            true;
+$enable-transitions:          true;
+$enable-reduced-motion:       false;
+$enable-smooth-scroll:        true;
+$enable-grid-classes:         true;
+$enable-button-pointers:      true;
+$enable-rfs:                  true;
+$enable-validation-icons:     true;
+$enable-negative-margins:     false;
+$enable-deprecation-messages: true;
+$enable-important-utilities:  true;
+
+
+// Body
+//
+// Settings for the `<body>` element.
+$body-bg:                   $white;
+$body-color:                $gray-600;
+
+// Fonts
+//
+// Font, line-height, and color for body text, headings, and more.
+$font-ubuntu: 				'Ubuntu', sans-serif;
+
+$font-family-base:			$font-ubuntu;
+$headings-font-family:		$font-family-base;
+$buttons-font-family:		$font-family-base;
+
+$font-weight-lighter:		lighter;
+$font-weight-light:			300;
+$font-weight-normal:		400;
+$font-weight-bold:			700;
+$font-weight-bolder:		bolder;
+
+
+$font-size-base:			.9rem;
+$font-size-lg:				$font-size-base * 1.5;
+$font-size-sm:				$font-size-base * .875;
+
+$font-weight-base:			$font-weight-normal;
+
+$line-height-sm:              1.25;
+$line-height-base:            1.5;
+$line-height-lg:              2;
+
+
+// Headings
+$headings-margin-bottom:      $spacer;
+$headings-font-style:         null;
+$headings-font-weight:        $font-weight-bold;
+$headings-line-height:        1.2;
+$headings-color:              $black;
+
+$h1-font-size:				$font-size-base * 2.5;
+$h2-font-size:				$font-size-base * 2;
+$h3-font-size:				$font-size-base * 1.75;
+$h4-font-size:				$font-size-base * 1.5;
+$h5-font-size:				$font-size-base * 1.25;
+$h6-font-size:				$font-size-base;
+
+$font-sizes: (
+  1: $h1-font-size,
+  2: $h2-font-size,
+  3: $h3-font-size,
+  4: $h4-font-size,
+  5: $h5-font-size,
+  6: $h6-font-size
+);
+
+
+// Display font sizes
+$display-font-sizes: (
+  1: 5rem,
+  2: 4.5rem,
+  3: 4rem,
+  4: 3.5rem,
+  5: 3rem,
+  6: 2.5rem
+);
+
+$display-font-weight: $font-weight-bold;
+$display-line-height: $headings-line-height;
+
+
+// Links
+//
+// Style anchor elements.
+
+$link-color:				$peach;
+$link-decoration:			none;
+$link-hover-color:			darken($link-color, 15%);
+$link-hover-decoration:		underline;
+
+
+// Components
+//
+// Define common padding and border radius sizes and more.
+$border-width:                1px;
+$border-widths: (
+	0: 0,
+	1: 1px,
+	2: 2px,
+	3: 3px,
+	4: 4px,
+	5: 5px
+);
+
+$border-color:				$light;
+
+$border-radius-sm:			.3rem;
+$border-radius:				.5rem;
+$border-radius-lg:			1rem;
+$border-radius-pill:		50rem;
+
+$box-shadow:				0 .5rem 1rem rgba($black, .15);
+$box-shadow-sm:				0 .125rem .25rem rgba($black, .075);
+$box-shadow-lg:				0 1rem 3rem rgba($black, .175);
+$box-shadow-inset:			inset 0 1px 2px rgba($black, .075);
+
+$component-active-color:	$white;
+$component-active-bg:		$primary;
+
+
+// Buttons + Forms
+///
+//##
+$input-btn-padding-y:         .375rem;
+$input-btn-padding-x:         2rem;
+
+$input-btn-focus-width:       2px;
+$input-btn-focus-color-opacity: 1;
+$input-btn-focus-color:         rgba($component-active-bg, $input-btn-focus-color-opacity);
+$input-btn-focus-box-shadow:    0 0 0 $input-btn-focus-width $input-btn-focus-color;
+
+
+$input-btn-padding-y-sm:      .25rem;
+$input-btn-padding-x-sm:      1rem;
+
+$input-btn-padding-y-lg:      .4rem;
+$input-btn-padding-x-lg:      2rem;
+
+
+// Buttons
+//
+//##
+$btn-padding-y:               $input-btn-padding-y;
+$btn-padding-x:               $input-btn-padding-x;
+
+$btn-focus-width:             $input-btn-focus-width;
+$btn-focus-box-shadow:        $input-btn-focus-box-shadow;
+
+$btn-border-width:            2px;
+$btn-font-weight:             $font-weight-bold;
+
+$btn-padding-y-sm:            $input-btn-padding-y-sm;
+$btn-padding-x-sm:            $input-btn-padding-x-sm;
+
+$btn-padding-y-lg:            $input-btn-padding-y-lg;
+$btn-padding-x-lg:            $input-btn-padding-x-lg;
+
+
+// Forms
+//
+//##
+$input-focus-width:                     $input-btn-focus-width;
+$input-focus-box-shadow:                $input-btn-focus-box-shadow;
+
+
+
+
+// Z-index master list
+//
+// Warning: Avoid customizing these values. They're used for a bird's eye view
+// of components dependent on the z-axis and are designed to all work together.
+$z-max:	1000;
+$z-min:	800;
+
+$zindex-tooltip:				$z-max - 10;
+$zindex-popover:				$z-max - 20;
+$zindex-modal:					$z-max - 30;
+$zindex-modal-backdrop:			$z-max - 40;
+$zindex-fixed:					$z-max - 50;
+$zindex-sticky:					$z-max - 60;
+$zindex-dropdown:				$z-max - 70;
+$zindex-dropdown-cart:			$z-max - 71;
+$zindex-dropdown-search:		$z-max - 72;
+
+$zindex-header:					$z-min + 60;
+$zindex-popover:				$z-min + 60;
+$zindex-navbar:					$z-min + 50;
+$zindex-menu-overlay:			$z-min + 40;
+$zindex-fixed:					$z-min + 30;
+$zindex-sticky:					$z-min + 20;
+
+$zindex-filters-wrapper: 		$z-min + 20;
+$zindex-filters-button: 		$z-min + 20;
+$zindex-filters-menu: 			$z-min + 10;
+$zindex-onsale-tag: 			$z-min;
+$zindex-carousel-button: 		$z-min;
+
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+$spacer: 1.6rem;
+$spacers: (
+	0: 0,
+	1: $spacer * .25,
+	2: $spacer * .5,
+	3: $spacer,
+	4: $spacer * 2.5,
+	5: $spacer * 3.5,
+);
+
+$negative-spacers: if($enable-negative-margins, negativify-map($spacers), null);
+
+$m-xs  : map-get($spacers, 1);
+$m-sm :  map-get($spacers, 2);
+$m-md  : map-get($spacers, 3);
+$m-lg  : map-get($spacers, 4);
+$m-xl  : map-get($spacers, 5);
+
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+$grid-gutter-width:           1.5rem;
+$gutters: $spacers;
+
+// Container padding
+$container-padding-x: $grid-gutter-width / 2;
+
+
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: 500px,
+	md: 800px,
+	lg: 1000px,
+	xl: 1200px,
+	xxl: 1400px
+);
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
+
+
+
+
+
+//== Masthead Defaults
+//
+//##
+$masthead-default-bg :          $white;
+$masthead-default-border :      $border-color;
+
+$masthead-user-messaging-height: 	var(--sb-masthead-user-messaging-height);
+$masthead-height:           		var(--sb-masthead-height);
+$masthead-height-reduced:  			var(--sb-masthead-height-reduced);
+
+$masthead-logo-width:    	  		var(--sb-masthead-logo-width);
+$masthead-logo-width-reduced:  		var(--sb-masthead-logo-width-reduced);
+
+$navbar-link-height:				var(--sb-masthead-navbar-height);
+
+// Mobile
+$masthead-height-mobile:    		60px;
+$masthead-logo-height-mobile:		$masthead-height-mobile * .75;
+
+
+//== User messaging bar
+//
+//##
+$masthead-user-messaging-bg-color: 	    $gray-100;
+$masthead-user-messaging-text-color: 	$body-color;
+$masthead-user-messaging-link-color: 	$link-color;
+
+//== User details bar
+//
+//##
+$user-details-bg-color : 	$border-color;
+$user-details-text-color : 	$body-color;
+$user-details-link-color : 	$link-color;
+
+
+
+//== Navbar
+//
+//##
+$navbar-speed-mobile:				400ms;
+$navbar-offset-mobile:				30vw;
+
+$navbar-border-radius:				$border-radius;
+$navbar-padding-horizontal:			$m-sm;
+$navbar-padding-vertical:			$m-sm;
+
+$navbar-color:						$body-color;
+$navbar-bg:							$white;
+$navbar-border:						$border-color;
+
+// Navbar links
+$navbar-link-color:					$body-color;
+$navbar-link-bg:					$navbar-bg;
+$navbar-link-hover-color:			$primary;
+$navbar-link-hover-bg:				$white;
+$navbar-link-height-mobile:			50px;
+
+$navbar-link-active-color:			$navbar-link-color;
+$navbar-link-active-bg:				$white;
+
+
+// Navbar toggle
+$navbar-button-size:				40px;
+$navbar-button-font:				24px;
+$navbar-toggle-bg:					$navbar-bg;
+$navbar-toggle-hover-bg:			$navbar-link-hover-bg;
+$navbar-toggle-icon-bar-bg:			$masthead-default-bg;
+
+
+//== Dropdown menus - cart, search
+//
+//##
+$dropdown-padding: 					50px $m-sm $m-sm $m-sm;
+$dropdown-padding-mobile: 			$m-xs;
+$dropdown-color: 					$navbar-link-color;
+$dropdown-bg: 						$navbar-bg;
+$dropdown-border: 					$border-color;
+
+
+
+// Accordion
+$accordion-padding-y:                     .5rem;
+$accordion-padding-x:                     .5rem;
+$accordion-color:                         $body-color;
+$accordion-bg:                            transparent;
+$accordion-border-width:                  1px;
+$accordion-border-color:                  $border-color;
+$accordion-border-radius:                 $border-radius;
+
+$accordion-body-padding-y:                $accordion-padding-y;
+$accordion-body-padding-x:                $accordion-padding-x;
+
+$accordion-button-padding-y:              $accordion-padding-y;
+$accordion-button-padding-x:              $accordion-padding-x;
+$accordion-button-color:                  $accordion-color;
+$accordion-button-bg:                     $accordion-bg;
+
+$accordion-transition:                    $btn-transition, border-radius .15s ease;
+$accordion-button-active-bg:              tint-color($component-active-bg, 90%);
+$accordion-button-active-color:           shade-color($primary, 10%);
+
+$accordion-button-focus-border-color:     $input-focus-border-color;
+$accordion-button-focus-box-shadow:       $btn-focus-box-shadow;
+
+$accordion-icon-width:                    1.25rem;
+$accordion-icon-color:                    $accordion-color;
+$accordion-icon-active-color:             $accordion-button-active-color;
+$accordion-icon-transition:               transform .2s ease-in-out;
+$accordion-icon-transform:                rotate(180deg);
+
+
+
+
+//== Sidebar
+//
+//##
+$sidebar-width : 250px;
+
+
+//== Footer
+//
+//##
+$footer-height : 			400px;
+$footer-bg-color :     		$masthead-default-bg;
+$footer-text-color :     	$body-color;
+$footer-link-color :     	$body-color;
+
+
+
+
+
+//== Slideshow Banner
+//
+//##
+$slideshow_height: 400px;
+$slideshow_height_mobile: 300px;
+$slideshow_pos_x: 60%;
+$slideshow_pos_y: $slideshow_height/2;
+
+

@@ -1,0 +1,168 @@
+// PLP - Product Listing Page
+// --------------------------------------------------
+// Two different layouts : a PLP single column layout and a grid of products everywhere else
+
+// Generic styles
+ul.products li.product {
+	overflow: hidden;
+	h3,
+	.woocommerce-loop-product__title,
+	.woocommerce-loop-category__title,
+	.star-rating {
+		margin-bottom: $m-sm;
+		color: $body-color;
+	}
+	.onsale {
+		top: 12px;
+		left: -25px;
+	}
+	.product__alternate-thumbnail {
+		display: none;
+	}
+	.attachment-woocommerce_thumbnail {
+		display: block;
+	}
+	.product__alternate-thumbnail,
+	.attachment-woocommerce_thumbnail {
+		margin: 0 auto;
+		height: 10vh;
+		min-height: 250px;
+		width: auto;
+		margin-bottom: $m-md;
+	}
+	&:hover {
+		.woocommerce-loop-product__title {
+			color: $link-color;
+		}
+	}
+	&.has-rollover:hover {
+		.product__alternate-thumbnail {
+			display: block;
+		}
+		.attachment-woocommerce_thumbnail {
+			display: none;
+		}
+	}
+	.product__title-wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	a {
+		text-decoration: none;
+	}
+	.star-rating {
+		font-size: $font-size-sm;
+	}
+
+	// Add to cart, view basket buttons
+	.button,
+	.added_to_cart {
+		&:before {
+			@extend .fa;
+			content: $fa-var-shopping-cart;
+			margin-right: $m-xs;
+		}
+	}
+
+	// Added to Cart button, View Basket
+	.added_to_cart {
+		@extend .btn;
+		@extend .btn-primary;
+	}
+
+	// Hide add to cart button once clicked
+	.button.ajax_add_to_cart.added {
+		display: none;
+	}
+	// .button.ajax_add_to_cart.loading {
+	// 	opacity: .5;
+	// 	cursor: default;
+	// }
+}
+
+
+// Grid layout
+ul.products:not(.columns-1) li.product {
+	// .add_to_cart_button,
+	.product__short-desc  {
+		@include visually-hidden();
+	}
+	h3,
+	.woocommerce-loop-product__title,
+	.woocommerce-loop-category__title {
+		font-size: $font-size-base;
+		min-height: 3rem;
+	}
+}
+
+
+// For products in the archive listing : Single column style
+ul.products.columns-1 {
+	li.product {
+		border-bottom: solid 1px $border-color;
+		flex-wrap: wrap;
+
+		> .woocommerce-LoopProduct-link {
+			min-width: 200px;
+			max-width: 200px;
+			display: block;
+			margin-right: $m-md;
+			margin-bottom: $m-sm;
+			img {
+				width: 100%;
+			}
+		}
+		h3,
+		.woocommerce-loop-product__title,
+		.woocommerce-loop-category__title {
+			@extend .h2;
+		}
+		.product__short-desc {
+			color: $body-color;
+			margin-bottom: $m-sm;
+		}
+		.product__title-wrapper {
+			flex: 1;
+			padding-bottom: 40px;
+			align-items: flex-start;
+    		justify-content: flex-end;
+		}
+			.button {
+
+			}
+			.added_to_cart {
+
+			}
+	}
+
+	// resize and style categories menu
+	li.product-category {
+		width: calc(25% - 20px);
+		border: none;
+		@include media-breakpoint-down(xs){
+			width: calc(50% - 20px);
+		}
+		.woocommerce-loop-category__title {
+			margin: $m-xs 0 0 0;
+		}
+	}
+}
+
+
+
+.woocommerce-result-count,
+.woocommerce-ordering  {
+	margin: 0 0 $m-md;
+}
+
+.woocommerce-ordering {
+	select {
+		vertical-align: top;
+	}
+}
+
+.woocommerce-pagination {
+	text-align: center;
+	margin-bottom: $m-lg;
+}

@@ -1,0 +1,10 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.86 41.86">
+<defs>
+<style>.shape__plus{fill:#fff;}
+</style>
+</defs>
+<path class="shape__plus" d="M20.93,41.86A20.93,20.93,0,1,1,41.86,20.93,21,21,0,0,1,20.93,41.86ZM20.93,1A19.93,19.93,0,1,0,40.86,20.93,20,20,0,0,0,20.93,1Z"/>
+<rect class="shape__plus" x="20.43" y="9.34" width="1" height="23.18"/>
+<rect class="shape__plus" x="9.34" y="20.43" width="23.18" height="1"/>
+</svg>

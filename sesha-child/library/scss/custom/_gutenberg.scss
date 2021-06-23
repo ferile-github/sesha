@@ -1,0 +1,22 @@
+$colors: (
+	'white': 		$white,
+	'black': 		$black,
+	'primary': 		$primary,
+	'secondary': 	$secondary,
+	"success":		$success,
+	"info":			$info,
+	"warning":		$warning,
+	"danger":		$danger,
+	"default":		$gray-300
+);
+
+@each $name, $color in $colors {
+
+	.has-#{$name}-color {
+		color: $color;
+	}
+
+	.has-#{$name}-background-color {
+		background-color: $color;
+	}
+}

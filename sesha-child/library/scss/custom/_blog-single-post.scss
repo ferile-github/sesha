@@ -1,0 +1,27 @@
+// Single Blog Post Page
+// ----------------------------------------------------------------
+.nav-links {
+	display: flex;
+	margin-bottom: $m-lg;
+	padding-top: $m-md;
+	border-top: solid 1px $border-color;
+
+	.nav-previous,
+	.nav-next {
+		flex: 1;
+		a {
+			@extend .btn;
+			@extend .btn-primary;
+			min-width: 50%;
+		}
+	}
+
+	.nav-previous {
+
+	}
+
+	.nav-next {
+		text-align: right;
+	}
+}
+

@@ -1,0 +1,39 @@
+// Terms and conditions
+// -------------------------
+.tcs {
+	counter-reset: section;
+}
+.tcs h3:before {
+	counter-increment: section;
+	content: counter(section) ". ";
+	margin: 0 0.5em 0 0;
+}
+.tcs ol {
+	counter-reset: clause;
+	list-style: none outside none;
+	margin: 0 0 3rem 0;
+	padding: 0;
+}
+.tcs ol ol {
+	margin: 0 0 0 2rem;
+}
+.tcs ol li {
+	counter-increment: clause;
+	margin: 0 0 .5rem;
+	padding: 0;
+}
+.tcs ol li:before {
+	content: counter(section) "." counters(clause, ".") ". ";
+}
+
+table.legal  {
+	margin-bottom: 2rem;
+	p {
+		margin: 0;
+	}
+	td, th {
+		vertical-align: top;
+		padding: .5rem;
+		border-bottom: solid 1px $border-color;
+	}
+}

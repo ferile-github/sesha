@@ -1,0 +1,281 @@
+// Generic Table styles for checkout and cart
+// ----------------------------------------------------------------
+$product_cart_thumbnail: 70px;
+
+table.cart {
+	.product-thumbnail img {
+		max-width: $product_cart_thumbnail;
+	}
+	.product-name {
+		@extend .h4;
+		margin-bottom: 0;
+		a {
+			color: $body-color;
+		}
+	}
+}
+
+table.shop_table {
+	text-align: left;
+	width: 100%;
+	margin-bottom: $m-sm;
+
+	th, td {
+		padding: 15px 5px;
+		vertical-align: middle;
+		font-weight: $font-weight-normal;
+	}
+	th {
+		font-weight: $font-weight-bold;
+	}
+
+}
+
+table.woocommerce-checkout-review-order-table {
+	th.product-total,
+	td.product-total,
+	.cart-subtotal td,
+	.order-total td {
+		text-align: right;
+	}
+}
+
+@include media-breakpoint-up(md) {
+	table.shop_table {
+		th {
+			font-weight: $font-weight-bold;
+		}
+		th, td {
+			border-bottom: 1px solid $border-color;
+		}
+	}
+	.cart_totals  {
+		th {
+			width: 80%;
+			text-align: right;
+		}
+		td {
+			text-align: right;
+		}
+	}
+
+	table.cart {
+		th.product-name {
+			opacity: 0;
+		}
+		.product-remove {
+			text-align: center;
+			vertical-align: middle;
+		}
+		.product-thumbnail {
+			width: $product_cart_thumbnail;
+		}
+
+		.product-price,
+		.product-quantity {
+			text-align: center;
+		}
+		.product-quantity {
+			width: 120px;
+		}
+		.product-subtotal {
+			text-align: right;
+		}
+	}
+}
+
+@include media-breakpoint-down(md) {
+	table.cart {
+		width: 100%;
+		display: block;
+		margin-bottom: $m-md;
+
+		tbody, tfoot {
+			display: block;
+		}
+		thead {
+			display: none;
+		}
+		tr {
+			display: block;
+		}
+
+		.cart_item {
+			display: grid;
+			grid-column-gap: $m-sm;
+			grid-template-columns: $product_cart_thumbnail 1fr;
+			grid-template-rows: 1fr 1fr 1fr 1fr;
+			padding: $m-sm 0;
+			position: relative;
+			border-bottom: 1px solid $border-color;
+		}
+		th, td {
+			padding: 0;
+			display: block;
+		}
+		.product-thumbnail {
+			grid-row: 1 / end;
+			grid-column: 1;
+		}
+		.product-remove .remove {
+			position: absolute;
+			top: 10px;
+			right: 0;
+		}
+
+		.product-name,
+		.product-quantity,
+		.product-price,
+		.product-subtotal {
+			grid-column: 2;
+		}
+		.product-name {
+			grid-row: 1;
+			padding-right: 30px;
+		}
+		.product-quantity {
+			grid-row: 2;
+			justify-self: end;
+			align-self: center;
+		}
+		.product-price {
+			grid-row: 3;
+			align-self: flex-end;
+			text-align: right;
+			&:before {
+				content: 'Unit Price : ';
+			}
+		}
+		.product-subtotal {
+			grid-row: 4;
+			text-align: right;
+			font-weight: $font-weight-bold;
+			&:before {
+				content: 'Total Unit Price : ';
+			}
+		}
+	}
+}
+
+
+// Cart totals side column table
+// ----------------------------------------------------------------
+.cart_totals {
+	> h2 {
+		@include visually-hidden();
+		margin: 0;
+	}
+	th, td {
+		border-bottom: 1px solid $border-color;
+	}
+	p small {
+		color: $gray-500;
+		font-size: 0.83em;
+	}
+	.discount td {
+		color: $success;
+	}
+}
+
+
+// PDP product details
+// ----------------------------------------------------------------
+.shop_attributes {
+	border: 0;
+	border-top: 1px dotted $border-color;
+	width: 100%;
+
+	th {
+		width: 150px;
+		padding: 8px;
+		border-top: 0;
+		border-bottom: 1px dotted $border-color;
+	}
+
+	td {
+		border-bottom: 1px dotted $border-color;
+		p {
+			margin: 0;
+			padding: 8px 0;
+		}
+	}
+
+	tr:nth-child(even) td,
+	tr:nth-child(even) th {
+		background: $light;
+	}
+}
+
+// My Order history
+// ----------------------------------------------------------------
+.my_account_orders {
+	.button {
+		@extend .btn-sm;
+	}
+}
+
+td.product-name {
+	dl.variation, .wc-item-meta {
+		list-style: none outside;
+
+		dt, .wc-item-meta-label {
+			float: left;
+			clear: both;
+			margin-right: .25em;
+			list-style: none outside;
+		}
+
+		dd {
+			margin: 0;
+		}
+
+		p,
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	p.backorder_notification {
+		font-size: 0.83em;
+	}
+}
+
+td.product-quantity {
+	min-width: 80px;
+}
+
+
+
+// Order Confirmation
+// ----------------------------------------------------------------
+@include media-breakpoint-down(md) {
+	.woocommerce-table--order-details,
+	.woocommerce-checkout-review-order-table {
+
+		.product-total,
+		tfoot th {
+			width: 30%;
+			align-self: center;
+		}
+
+		.product-name,
+		tfoot td  {
+			width: 70%;
+		}
+
+		tfoot td,
+		.product-total {
+			text-align: right;
+			font-weight: $font-weight-bold;
+			align-self: center;
+		}
+
+		tr.shipping {
+			td {
+				text-align: left;
+			}
+		}
+
+
+	}
+}

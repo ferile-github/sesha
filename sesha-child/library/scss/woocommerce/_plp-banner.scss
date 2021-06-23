@@ -1,0 +1,9 @@
+.woocommerce-products-header {
+	margin-bottom: $m-sm;
+}
+@include media-breakpoint-up(md) {
+	.woocommerce-products-header .term-description {
+		max-width: 50%;
+		margin: 0 auto;
+	}
+}

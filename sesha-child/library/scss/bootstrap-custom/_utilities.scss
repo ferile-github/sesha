@@ -1,0 +1,6 @@
+// Custom Utility classes
+// --------------------------------------------------
+.screen-reader-text,
+.sr-only {
+	@include visually-hidden();
+}

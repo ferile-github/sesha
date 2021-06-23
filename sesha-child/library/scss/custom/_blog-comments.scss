@@ -1,0 +1,89 @@
+// Comments Layout
+// ----------------------------------------------------------------
+a.comment-reply-link {
+	@extend .btn;
+	@extend .btn-primary;
+	@extend .btn-sm;
+	float: right;
+}
+
+
+.comment__content {
+	p {
+		margin-bottom: $m-xs;
+	}
+}
+
+.comment__author  {
+	max-width: 80px;
+	margin-right: $m-xs;
+	.avatar {
+		border-radius: 50%;
+		border: solid 4px $white;
+	}
+}
+
+.comment__item {
+	.comment-respond {
+		margin-top: $m-md;
+	}
+}
+
+	.comment__reply {
+		padding: $m-md;
+		background-color: $light;
+	}
+
+
+
+
+// Comment Form
+// ----------------------------------------------------------------
+
+
+.comment-respond {
+	// overflow: hidden; // from PDP reviews panel
+
+	p {
+		margin-bottom: $m-sm;
+	}
+
+	label {
+		@extend .form-label;
+	}
+
+	// Comment form validation
+	label.validation-message {
+		display: none;
+		color: $danger;
+	}
+
+	.has-error + label.validation-message {
+		display: block;
+	}
+
+	.required {
+		color: $danger;
+		font-weight: $font-weight-bold;
+		font-size: 120%;
+	}
+
+	textarea {
+		display: block;
+		width: 100%;
+	}
+	.form-submit {
+		text-align: right;
+	}
+	input[type='submit'] {
+		@extend .btn;
+		@extend .btn-primary;
+		@extend .btn-lg;
+	}
+}
+
+
+#cancel-comment-reply-link {
+	float: right;
+}
+

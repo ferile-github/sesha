@@ -1,0 +1,23 @@
+// Pagination
+// ----------------------------------------------------------------
+// Blog Posts, Woocommerce
+.page-numbers {
+	@include menu-mixin();
+	display: flex;
+	justify-content: center;
+	margin-bottom: $m-lg;
+
+	.page-numbers {
+		margin: 0 1px;
+		@extend .btn;
+		@extend .btn-sm;
+
+		&.current {
+			cursor: default;
+		}
+	}
+
+	a.page-numbers {
+		@extend .btn-default;
+	}
+}

@@ -1,0 +1,89 @@
+// Footer
+// ----------------------------------------------------------------
+.site-footer {
+	padding: $m-xs 0;
+	background-color: $footer-bg-color;
+	color: $footer-text-color;
+	border-top: solid 1px $masthead-default-border;
+	@include media-breakpoint-up(md) {
+		min-height: $footer-height;
+	}
+	a {
+		color: $footer-link-color;
+	}
+
+	.searchbar_main_logo {
+		width: 100px;
+		display: block;
+		margin: $m-xs auto;
+		path {
+			fill: $footer-link-color;
+		}
+	}
+
+	.contact__detail {
+		margin-bottom: $m-xs;
+		display: block;
+		text-align: center;
+	}
+}
+
+	.footer__title {
+		@extend .h5;
+		margin-bottom: $m-sm;
+		text-align: center;
+	}
+
+
+// Navigation Menu
+// ----------------------------------------------------------------
+.footer__menu {
+	justify-content: center;
+	li {
+		margin: 0 $m-xs;
+	}
+	@include media-breakpoint-down(md) {
+		li a {
+			padding: $m-xs 0;
+			display: inline-block;
+		}
+	}
+}
+
+// Widget Area
+// ----------------------------------------------------------------
+@include media-breakpoint-up(sm) {
+	.footer__col-widgets {
+		display: flex;
+		flex-wrap: wrap;
+		.footer__item {
+			min-width: 240px;
+			flex: 1;
+			padding: 0 $grid-gutter-width;
+		}
+	}
+}
+
+// Social Media
+// ----------------------------------------------------------------
+.site-footer {
+
+}
+
+// Site disclaimer
+// ----------------------------------------------------------------
+.site-info {
+
+}
+
+
+// Mobile - common to all footers
+// ----------------------------------------------------------------
+@include media-breakpoint-only(xs) {
+	.footer__menu {
+		flex-direction: column;
+		li {
+			text-align: center;
+		}
+	}
+}

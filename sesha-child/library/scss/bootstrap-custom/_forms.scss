@@ -1,0 +1,20 @@
+input[type=search],
+input[type=date],
+input[type=email],
+input[type=tel],
+input[type=number],
+input[type=password],
+input[type=text],
+input[type=url],
+textarea  {
+  @extend .form-control;
+}
+
+select {
+  @extend .form-select;
+}
+
+
+input[type=checkbox] {
+  @extend .form-check-input;
+}

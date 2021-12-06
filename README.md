@@ -1,15 +1,17 @@
-# sesha
-A starter theme for Wordpress developers
+# Sesha!
+A starter theme for Wordpress developers by Andy Fairlie, to get you up and running quickly
 
 Please see the changelog.md in sesha-child for commit history
 
 ## Features
-- Bootstrap 5.01 baked in
-- Easy to configure gulp build for front end assets
+- Bootstrap 5 baked in
+- Easy to configure Gulp script to build all CSS and JS, as well as transfer files to your host via FTP
 - Clean set of PHP templates for getting up and running quick with Wordpress development
 - Extensible Customizer theme options
 - Parent theme 'Sesha' to keep generic code in
 - Useful set of page templates for Bootstrap components and style guides
+- Pattern library for all CSS styles available in Bootstrap
+
 
 ## Getting started
 - run 'npm install' inside the sesha-child folder to install dependancies, and then run 'gulp' to build and watch CSS and JS

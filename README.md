@@ -1,7 +1,11 @@
 # Sesha!
 A starter theme for Wordpress developers by Andy Fairlie, to get you up and running quickly
 
-Please see the changelog.md in sesha-child for commit history
+The repo consists of two main folders : `sesha` and `sesha-child`. `sesha` is the parent theme, and code in this theme is available to all children themes that use it. You generally will
+
+`sesha-child` is where the action takes place, and all your development lives.
+
+Please see the `changelog.md` in sesha-child for commit history.
 
 ## Features
 - Bootstrap 5 baked in

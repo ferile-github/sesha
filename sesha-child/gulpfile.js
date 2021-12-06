@@ -3,7 +3,7 @@ const gulp = 			require('gulp'),
 	notify = 			require("gulp-notify"),
 	sourcemaps = 		require('gulp-sourcemaps'),
 	plumber = 			require('gulp-plumber'),
-	sass = 				require('gulp-sass'),
+	sass = 				require('gulp-sass')(require('sass')),
 	autoprefixer = 		require('gulp-autoprefixer'),
 	minifyCss = 		require('gulp-clean-css'),
 	babel = 			require('gulp-babel'),
@@ -38,7 +38,7 @@ paths = {
 	},
 	developmentScripts: library+'/scripts',
 	productionScripts: library+'/scripts/production',
-	ftpLocation : '/public_html/wp-content/themes/sesha-child',
+	ftpLocation : '/path/to/wp-content/themes/sesha-child',
 	ftpFiles : [
 		'./**/*',
 		'./library/css',
@@ -46,6 +46,7 @@ paths = {
 
 		'!./library/.eslintrc',
 		'!./gulpfile.js',
+		'!./node_modules',
 		'!./.gitignore',
 		'!./package.json',
 		'!./package-lock.json',
@@ -117,13 +118,10 @@ gulp.task('sass', () => {
 	return gulp.src(paths.scss.src)
 		.pipe(sourcemaps.init())
 		.pipe(plumber())
-		.pipe(sass({
-			errLogToConsole: false
-		}))
-		.on('error', function (err) {
+		.pipe(sass.sync().on('error', function (err) {
 			notify().write(err);
 			this.emit('end');
-		})
+		}))
 		.pipe(autoprefixer())
 		.pipe(minifyCss())
 		.pipe(sourcemaps.write('./maps'))
@@ -156,11 +154,11 @@ gulp.task('watch', () => {
 		paths.scripts.watch
 	];
 
-	gulp.watch(watch, gulp.series('build'));
+	gulp.watch(watch, gulp.parallel('build'));
 });
 
 
-gulp.task('build', gulp.series('sass', 'js', 'woocommerce'));
-gulp.task('default', gulp.series('build', gulp.parallel('watch')));
-gulp.task('production', gulp.series('build', 'movescripts', 'copytheme'));
-gulp.task('deploy', gulp.series('build', 'movescripts', 'ftp'));
+gulp.task('build', gulp.parallel('sass', 'js', 'woocommerce'));
+gulp.task('default', gulp.parallel('build', gulp.parallel('watch')));
+gulp.task('production', gulp.parallel('build', 'movescripts', 'copytheme'));
+gulp.task('deploy', gulp.parallel('build', 'movescripts', 'ftp'));

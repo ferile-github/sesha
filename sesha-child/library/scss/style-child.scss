@@ -1,10 +1,13 @@
  // Core variables and mixins
+// Prefix for :root CSS variables
+$variable-prefix: sb-;
 @import "bootstrap-5/functions";
 @import "bootstrap-custom/colors";
 @import "bootstrap-5/variables";
 @import "bootstrap-custom/variables";
 @import "bootstrap-custom/mixins";
 @import "bootstrap-5/mixins";
+@import "bootstrap-5/utilities";
 // Fonts
 @import "fontawesome-4.7/font-awesome";
 @import "custom/fonts";
@@ -23,35 +26,39 @@
 @import "bootstrap-custom/forms";
 // @import "bootstrap-5/buttons";
 @import "bootstrap-custom/buttons"; // Use Custom
+@import "bootstrap-5/nav";
+@import "bootstrap-5/pagination";
+@import "bootstrap-5/breadcrumb";
+
+// JS plugin modules
 @import "bootstrap-5/transitions";
 @import "bootstrap-5/dropdown";
-@import "bootstrap-5/button-group";
-@import "bootstrap-5/nav";
-@import "bootstrap-5/navbar";
-@import "bootstrap-5/card";
 @import "bootstrap-5/accordion";
-@import "bootstrap-5/breadcrumb";
-@import "bootstrap-5/pagination";
-@import "bootstrap-5/badge";
-@import "bootstrap-5/alert";
-@import "bootstrap-5/progress";
-@import "bootstrap-5/list-group";
-@import "bootstrap-5/close";
-@import "bootstrap-5/toasts";
 @import "bootstrap-5/modal";
-@import "bootstrap-5/tooltip";
-@import "bootstrap-5/popover";
-@import "bootstrap-5/carousel";
-@import "bootstrap-5/spinners";
-@import "bootstrap-5/offcanvas";
+@import "bootstrap-5/close";
+@import "bootstrap-5/placeholders";
+
+// Optional
+@import "bootstrap-5/button-group";
+// @import "bootstrap-5/navbar";
+// @import "bootstrap-5/card";
+// @import "bootstrap-5/badge";
+// @import "bootstrap-5/alert";
+// @import "bootstrap-5/progress";
+// @import "bootstrap-5/list-group";
+// @import "bootstrap-5/toasts";
+// @import "bootstrap-5/tooltip";
+// @import "bootstrap-5/popover";
+// @import "bootstrap-5/carousel";
+// @import "bootstrap-5/spinners";
+// @import "bootstrap-5/offcanvas";
+
 
 
 // Utility Classes
 @import "bootstrap-5/helpers";
-@import "bootstrap-5/utilities";
 @import "bootstrap-5/utilities/api";
 @import "bootstrap-custom/utilities"; // Use Custom
-@import "custom/gutenberg";
 
 
 // For theme development

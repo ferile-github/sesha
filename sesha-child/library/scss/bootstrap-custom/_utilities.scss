@@ -4,3 +4,24 @@
 .sr-only {
 	@include visually-hidden();
 }
+
+.alignleft,
+.alignright,
+.aligncenter {
+	margin-bottom: $grid-gutter-width;
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignleft {
+	float: left;
+	margin-right: $grid-gutter-width;
+}
+.alignright {
+	float: right;
+	margin-left: $grid-gutter-width;
+}

@@ -1,4 +1,18 @@
 <?php
+$theme_colors = array(
+	'White' 	=> '#fff',
+	'Black' 	=> '#000',
+	'Light' 	=> '#e9ecef',
+	'Dark' 		=> '#6c757d',
+	'Primary' 	=> '#474052',
+	'Secondary' => '#ed706f',
+
+	"Success" 	=> '#378d5f',
+	"Info" 		=> '#4eaebe',
+	"Warning" 	=> '#FAB513',
+	"Danger" 	=> '#eb1c23',
+);
+
 // Get the theme rollin'
 // -------------------------------------------------------------------------------
 function launch_sesha_child() {
@@ -19,9 +33,18 @@ function launch_sesha_child() {
 		));
 	}
 
-	add_action( 'wp_enqueue_scripts', 'sesha_extend_scripts_and_styles' );
+	// Add Theme Colours to Editor Dashboard
+	sesha_add_theme_colors($GLOBALS['theme_colors']);
 
+	// Extend CSS and JS assets loading
+	add_action( 'wp_enqueue_scripts', 'sesha_extend_scripts_and_styles' );
 }
+
+
+// Call filters and actions
+// -------------------------------------------------------------------------------
+add_action( 'after_setup_theme', 'launch_sesha_child' );
+
 
 
 // Extend CSS and JS assets loading
@@ -32,10 +55,14 @@ function sesha_extend_scripts_and_styles() {
 	// wp_enqueue_script( 'sesha-js-custom' );
 }
 
-
-// Call filters and actions
+// Add Body Classes
 // -------------------------------------------------------------------------------
-add_action( 'after_setup_theme', 'launch_sesha_child' );
+add_filter( 'body_class', function( $classes ) {
+	$string = '';
+
+	return array_merge( $classes, array( $string ) );
+} );
+
 
 
 // Get page ID, used for banners
@@ -68,7 +95,6 @@ function get_banner_id($term) {
 }
 
 
-
 // Theme Suppport
 // -------------------------------------------------------------------------------
 function sesha_theme_support_child() {
@@ -81,49 +107,6 @@ function sesha_theme_support_child() {
 	);
 
 	add_theme_support( 'disable-custom-colors' );
-
-	add_theme_support( 'editor-color-palette', array(
-		array(
-			'name'  => __( 'White', 'sesha' ),
-			'slug'  => 'white',
-			'color'	=> '#ffffff',
-		),
-		array(
-			'name'  => __( 'Black', 'sesha' ),
-			'slug'  => 'black',
-			'color'	=> '#000000',
-		),
-		array(
-			'name'  => __( 'Teal', 'sesha' ),
-			'slug'  => 'teal',
-			'color'	=> '#199eda',
-		),
-		array(
-			'name'  => __( 'Blue', 'sesha' ),
-			'slug'  => 'blue',
-			'color' => '#0f6bb4',
-		),
-		array(
-			'name'  => __( 'Navy', 'sesha' ),
-			'slug'  => 'navy',
-			'color' => '#005280',
-		),
-		array(
-			'name'	=> __( 'Indigo', 'sesha' ),
-			'slug'	=> 'indigo',
-			'color'	=> '#083c65',
-		),
-		array(
-			'name'	=> __( 'Green', 'sesha' ),
-			'slug'	=> 'green',
-			'color'	=> '#26b787',
-		),
-		array(
-			'name'	=> __( 'Yellow', 'sesha' ),
-			'slug'	=> 'yellow',
-			'color'	=> '#fed24c',
-		),
-	) );
 
 }
 

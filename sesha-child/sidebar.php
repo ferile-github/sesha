@@ -9,7 +9,7 @@ if ( $GLOBALS['sidebar']['frontpage'] ) : // Default homepage  ?>
 	</main>
 </div> <!--  .container-->
 
-<?php elseif ( $GLOBALS['sidebar']['blog'] && is_active_sidebar( 'sidebar' ) ) : // blog page ?>
+<?php elseif ( ( $GLOBALS['sidebar']['blog'] || is_singular('post') ) && is_active_sidebar( 'sidebar' ) ) : // blog page ?>
 	</main>
 
 	<?php echo $sidebar ?>

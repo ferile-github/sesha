@@ -67,7 +67,6 @@ div.product {
 
 						.product__alternate-thumbnail,
 						.attachment-woocommerce_thumbnail {
-							margin: auto;
 							height: auto;
 							min-height: auto;
 							width: 100%;
@@ -263,10 +262,10 @@ ul.products {
 // ----------------------------------------------------------------
 // Also used for related products
 ul.products {
-	margin: 0 #{-$grid-gutter-width};
+	margin: 0 #{-$grid-gutter-width * 0.5};
 
 	li.product {
-		margin: 0 $grid-gutter-width/2;
+		margin: 0 $grid-gutter-width*0.5;
 		margin-bottom: $grid-gutter-width;
 	}
 }

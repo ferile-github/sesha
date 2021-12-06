@@ -26,7 +26,9 @@
 // null by default, thus nothing is generated.
 
 :root {
-  font-size: $font-size-root;
+  @if $font-size-root != null {
+    font-size: var(--#{$variable-prefix}root-font-size);
+  }
 
   @if $enable-smooth-scroll {
     @media (prefers-reduced-motion: no-preference) {
@@ -43,18 +45,20 @@
 // 3. Prevent adjustments of font size after orientation changes in iOS.
 // 4. Change the default tap highlight to be completely transparent in iOS.
 
+// scss-docs-start reboot-body-rules
 body {
   margin: 0; // 1
-  font-family: $font-family-base;
-  @include font-size($font-size-base);
-  font-weight: $font-weight-base;
-  line-height: $line-height-base;
-  color: $body-color;
-  text-align: $body-text-align;
-  background-color: $body-bg; // 2
+  font-family: var(--#{$variable-prefix}body-font-family);
+  @include font-size(var(--#{$variable-prefix}body-font-size));
+  font-weight: var(--#{$variable-prefix}body-font-weight);
+  line-height: var(--#{$variable-prefix}body-line-height);
+  color: var(--#{$variable-prefix}body-color);
+  text-align: var(--#{$variable-prefix}body-text-align);
+  background-color: var(--#{$variable-prefix}body-bg); // 2
   -webkit-text-size-adjust: 100%; // 3
   -webkit-tap-highlight-color: rgba($black, 0); // 4
 }
+// scss-docs-end reboot-body-rules
 
 
 // Content grouping
@@ -74,52 +78,6 @@ hr:not([size]) {
   height: $hr-height; // 2
 }
 
-
-// Typography
-//
-// 1. Remove top margins from headings
-//    By default, `<h1>`-`<h6>` all receive top and bottom margins. We nuke the top
-//    margin for easier control within type scales as it avoids margin collapsing.
-
-%heading {
-  margin-top: 0; // 1
-  margin-bottom: $headings-margin-bottom;
-  font-family: $headings-font-family;
-  font-style: $headings-font-style;
-  font-weight: $headings-font-weight;
-  line-height: $headings-line-height;
-  color: $headings-color;
-}
-
-h1 {
-  @extend %heading;
-  @include font-size($h1-font-size);
-}
-
-h2 {
-  @extend %heading;
-  @include font-size($h2-font-size);
-}
-
-h3 {
-  @extend %heading;
-  @include font-size($h3-font-size);
-}
-
-h4 {
-  @extend %heading;
-  @include font-size($h4-font-size);
-}
-
-h5 {
-  @extend %heading;
-  @include font-size($h5-font-size);
-}
-
-h6 {
-  @extend %heading;
-  @include font-size($h6-font-size);
-}
 
 
 // Reset margins on paragraphs

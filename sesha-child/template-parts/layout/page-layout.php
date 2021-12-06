@@ -42,6 +42,10 @@ if ( is_active_sidebar( 'filters' ) ) {
 <div id="site-content-wrapper" class="site-content__wrapper container / animated fadeIn / <?php echo $sidebar_class ?> ">
 	<?php echo $main ?>
 
+<?php elseif ( is_singular('post') && is_active_sidebar( 'sidebar' ) ) : // Single blog post ?>
+<div class="site-content__wrapper container / animated fadeIn / <?php echo $sidebar_class ?> ">
+	<?php echo $main ?>
+
 <?php elseif ( $GLOBALS['sidebar']['woocommerce'] ) : // WooCommerce listing page ?>
 <div id="site-content-wrapper" class="site-content__wrapper container / animated fadeIn / <?php echo $filters_class ?>">
 	<?php echo $main ?>

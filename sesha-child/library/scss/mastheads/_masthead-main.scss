@@ -188,8 +188,8 @@ body.woocommerce-cart  {
 		$box: 1.6rem;
 		position: absolute;
 		z-index: $zindex-dropdown-cart;
-		top: -$box/2;
-		right: -$box/2;
+		top: -$box*0.5;
+		right: -$box*0.5;
 		display: block;
 		width: $box;
 		height: $box;
@@ -231,7 +231,7 @@ body.woocommerce-cart  {
 	color: $navbar-color;
 	border-color: $navbar-border;
 }
-	.level-2-list {
+	.dropdown__menu {
 		flex-direction: column;
 	}
 

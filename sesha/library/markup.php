@@ -7,6 +7,44 @@ function launch_sesha_cleanup() {
 add_action( 'after_setup_theme', 'launch_sesha_cleanup' );
 
 
+$theme_styles = '';
+
+// Add Theme Colours to Editor Dashboard
+// -------------------------------------------------------------------------------
+function sesha_add_theme_colors($theme_colors) {
+	$editor_color_palette = array();
+
+
+	foreach ($theme_colors as $key => $value) {
+		array_push($editor_color_palette, array(
+			'name'  => __( $key, 'sesha' ),
+			'slug'  => strtolower($key),
+			'color'	=> $value
+		));
+
+		$GLOBALS['theme_styles'] .= '.has-'.strtolower($key).'-color {
+			color: var(--sb-'.strtolower($key).')
+		}
+		.has-'.strtolower($key).'-background-color {
+			background-color: var(--sb-'.strtolower($key).')
+		}';
+	};
+
+	// Enqueue child scripts and styles
+	add_action( 'wp_enqueue_scripts', 'sesha_theme_colors_stylesheet' );
+
+	add_theme_support( 'editor-color-palette', $editor_color_palette); // Add editor theme styles to dashboard
+
+}
+
+
+function sesha_theme_colors_stylesheet() {
+	wp_register_style( 'theme-colors', false );  // Register a stylesheet for theme color styles
+	wp_enqueue_style( 'theme-colors' ); // Enqueue the inline stylesheet
+	wp_add_inline_style( 'theme-colors', $GLOBALS['theme_styles'] ); // Add inline styles for theme from editor dashboard
+}
+
+
 
 // Body Class
 // -------------------------------------------------------------------------------

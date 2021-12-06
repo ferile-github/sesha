@@ -23,13 +23,13 @@
 		settings.isLG = $.fn.lgDetect();
 
 		if( settings.isXS ) {
-			console.log('Is a extra Small screen');
+			console.log('Is a XS screen');
 		} else if ( settings.isSM ) {
-			console.log('Is a Small screen');
+			console.log('Is a SM screen');
 		} else if ( settings.isMD ) {
-			console.log('Is a Medium screen');
+			console.log('Is a MD screen');
 		} else if ( settings.isLG) {
-			console.log('Is a Large screen');
+			console.log('Is a LG screen');
 		}
 
 		// Store settings on window object
@@ -40,19 +40,35 @@
 	$(window).resize($.fn.responsive);
 
 	$.fn.xsDetect = function() {
-		if (jQuery('.d-xs-block').css('display') === 'block' ) return true;
+		if (jQuery('#RESPONSIVE_XS').css('display') === 'block' ) {
+			return true;
+		} else {
+			return false;
+		}
 	};
 
 	$.fn.smDetect = function() {
-		if (jQuery('.d-sm-block').css('display') === 'block') return true;
+		if (jQuery('#RESPONSIVE_SM').css('display') === 'block') {
+			return true;
+		} else {
+			return false;
+		}
 	};
 
 	$.fn.mdDetect = function() {
-		if (jQuery('.d-md-block').css('display') === 'block') return true;
+		if (jQuery('#RESPONSIVE_MD').css('display') === 'block') {
+			return true;
+		} else {
+			return false;
+		}
 	};
 
 	$.fn.lgDetect = function() {
-		if (jQuery('.d-lg-block').css('display') === 'block' ) return true;
+		if (jQuery('#RESPONSIVE_LG').css('display') === 'block' ) {
+			return true;
+		} else {
+			return false;
+		}
 	};
 
 	$.fn.defaults = defaults;

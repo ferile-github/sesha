@@ -1,14 +1,14 @@
 <?php
 // Print Picture Elements
 // -------------------------------------------------------------------------------
-function print_picture($image, $class = '', $mobile_high_res = false) {
+function print_picture( $image, $class = '', $mobile_high_res = false ) {
 	$string = '<picture class="'. $class .'">';
 		$string .= '<source srcset="'. $image['sizes']['large'] .'" media="(min-width: 1200px)">';
 		$string .= '<source srcset="'. $image['sizes']['medium'] .'" media="(min-width: 800px)">';
 		if($mobile_high_res) {
-			$string .= '<img src="'. $image['sizes']['medium'] .'">';
+			$string .= '<img loading="lazy" src="'. $image['sizes']['medium'] .'" height="'. $image['sizes']['medium-height'] .'" width="'. $image['sizes']['medium-width'] .'">';
 		} else {
-			$string .= '<img src="'. $image['sizes']['thumbnail'] .'">';
+			$string .= '<img loading="lazy" src="'. $image['sizes']['thumbnail'] .'" height="'. $image['sizes']['thumbnail-height'] .'" width="'. $image['sizes']['thumbnail-width'] .'">';
 		}
 	$string .= '</picture>';
 
@@ -17,7 +17,7 @@ function print_picture($image, $class = '', $mobile_high_res = false) {
 
 // Print SVG Files
 // -------------------------------------------------------------------------------
-function print_svg($path) {
+function print_svg($path, $return = false) {
 	if ( $path ) {
 		$filesystem = get_theme_file_path();
 		$url  = get_stylesheet_directory_uri();
@@ -25,17 +25,40 @@ function print_svg($path) {
 		if(file_exists($filesystem.$path) ) {
 			// We have a file from the theme folder
 			$response = wp_remote_get( esc_url_raw( $url.$path ) );
+
+			if( is_wp_error( $response ) ) {
+				echo $response->get_error_code();
+				echo $response->get_error_data();
+				return false;
+			}
+
 			if($response['body']) {
-				echo $response['body'];
+				if($return === true) {
+					return $response['body'];
+				} else {
+					echo $response['body'];
+				}
 			}
 		}
 		elseif( !file_exists($filesystem.$path) ) {
 			// We have a file from the WP Media Library
 			$response = wp_remote_get( esc_url_raw( $path ) );
+
+			if( is_wp_error( $response ) ) {
+				echo $response->get_error_code();
+				echo $response->get_error_data();
+				return false;
+			}
+
 			if($response['body']) {
-				echo $response['body'];
+				if($return === true) {
+					return $response['body'];
+				} else {
+					echo $response['body'];
+				}
 			}
 		}
+
 	}
 }
 // usage in theme files :
@@ -46,11 +69,19 @@ function print_svg($path) {
 function printSiteBrandLogo($path) {
 	if ( $path ) {
 		$response = wp_remote_get( esc_url_raw( $path ) );
+
+		if( is_wp_error( $response ) ) {
+			echo $response->get_error_code();
+			echo $response->get_error_data();
+			return false;
+		}
+
 		if($response['headers']['content-type'] !== 'image/svg+xml' ) {
 			echo '<img class="custom-logo" src='.$path.' alt="'.get_bloginfo('name').'">';
 		} else {
 			print_svg($path);
 		}
+
 	}
 }
 

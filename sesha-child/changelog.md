@@ -2,6 +2,18 @@
 All notable changes to this project will be documented in this file.
 
 ## [Changelog]
+## [4.1.4] - September, October, November 2021
+### Changed
+- Updating to Bootstrap 5.1.3
+- Added Widget Search Form styles
+- Removed node-sass (deprecated) and replaced with dart-sass
+- Updated all node packages
+- Added error handling for logo and SVG fetching
+- Fix to footer customizer options
+- Fix to masthead logo, if no logo is present
+- Updated Pattern Library, added better swatches, type, buttons
+- Better handling of custom theme colours in dashboard editor
+- Moved Bootstrap, Pattern Library and Woocommerce templates to parent theme
 
 ## [4.1.3] - June 2021
 ### Changed
@@ -17,6 +29,16 @@ All notable changes to this project will be documented in this file.
 - Vastly improved masthead options, better integration with WP Customizer,
 - Fixed mobile layout for User Details
 - Totally reworked theme masthead variables, incorporating CSS Custom Properties
+- Pattern library cleanup
+- Commented out unused Boostrap modules
+- Fixed Mobile menu variables
+- Fix to filters menu on shop page
+- Update to GA Event Tracking utility
+- Updated Print SVG util to return a string
+- Moved responsive plugin HTML to parent theme
+- Add Body Class function added to theme
+- Better Search page template
+- Updated WooCommerce Page templates
 
 ## [4.1.2] - March 2021
 ### Changed

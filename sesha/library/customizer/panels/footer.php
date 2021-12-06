@@ -4,7 +4,7 @@
 $wp_customize->add_setting('sesha[site_info_footer_toggle]', array(
 	'capability'     => 'edit_theme_options',
 	'type'           => 'option',
-	'default' 		 => true,
+	'default' 		 => false,
 	'sanitize_callback' => 'sesha_sanitize_checkbox'
 ));
 
@@ -20,7 +20,7 @@ $wp_customize->add_control('sesha[site_info_footer_toggle]', array(
 $wp_customize->add_setting('sesha[menu_footer_toggle]', array(
 	'capability'     => 'edit_theme_options',
 	'type'           => 'option',
-	'default' 		 => true,
+	'default' 		 => false,
 	'sanitize_callback' => 'sesha_sanitize_checkbox'
 ));
 
@@ -36,7 +36,7 @@ $wp_customize->add_control('sesha[menu_footer_toggle]', array(
 $wp_customize->add_setting('sesha[contact_details_footer_toggle]', array(
 	'capability'     => 'edit_theme_options',
 	'type'           => 'option',
-	'default' 		 => true,
+	'default' 		 => false,
 	'sanitize_callback' => 'sesha_sanitize_checkbox'
 ));
 
@@ -52,7 +52,7 @@ $wp_customize->add_control('sesha[contact_details_footer_toggle]', array(
 $wp_customize->add_setting('sesha[social_media_footer_toggle]', array(
 	'capability'     => 'edit_theme_options',
 	'type'           => 'option',
-	'default' 		 => true,
+	'default' 		 => false,
 	'sanitize_callback' => 'sesha_sanitize_checkbox'
 ));
 

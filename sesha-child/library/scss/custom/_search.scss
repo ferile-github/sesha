@@ -1,6 +1,6 @@
 // Search Form
 // =======================================================
-// Used in masthead and in widgets, search pages
+// Used in masthead and 404 page
 .search__form {
 	display: flex;
 	background: $white;
@@ -15,4 +15,31 @@
 		}
 	}
 	.search__button { flex : 1; max-width: 50px;}
+}
+
+
+// Widget Search Form
+// =======================================================
+.wp-block-search {
+	.wp-block-search__input {
+		@extend .form-control;
+	}
+
+	.wp-block-search__button  {
+		@extend .btn;
+		@extend .btn-sm;
+		@extend .btn-primary;
+	}
+}
+
+.wc-block-product-search  {
+	.wc-block-product-search__field {
+		@extend .form-control;
+
+	}
+	.wc-block-product-search__button {
+		@extend .btn;
+		@extend .btn-sm;
+		@extend .btn-primary;
+	}
 }

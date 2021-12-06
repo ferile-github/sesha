@@ -12,8 +12,13 @@ while ( have_posts() ) : the_post();
 	get_template_part( 'template-parts/post/content', get_post_format() );
 
 	the_post_navigation( array(
-		'prev_text' => '<span class="visually-hidden">' . __( 'Previous Post', 'sesha' ) . '</span>   <span class="nav-title"><i class="fa fa-chevron-left" aria-hidden="true"></i> %title</span>',
-		'next_text' => '<span class="visually-hidden">' . __( 'Next Post', 'sesha' ) . '</span>       <span class="nav-title">%title <i class="fa fa-chevron-right" aria-hidden="true"></i></span>',
+		'prev_text' => '<span class="sr-only"> %title </span>
+			<span class="nav-title">
+				<i class="fa fa-chevron-left" aria-hidden="true"></i> '. __( 'Previous Post', 'sesha' ) .'
+			</span>',
+		'next_text' => '<span class="sr-only"> %title </span>
+			<span class="nav-title">
+			' . __( 'Next Post', 'sesha' ) . ' <i class="fa fa-chevron-right" aria-hidden="true"></i></span>',
 	) );
 
 	if ( comments_open() || get_comments_number() ) :

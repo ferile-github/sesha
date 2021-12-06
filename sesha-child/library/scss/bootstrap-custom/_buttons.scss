@@ -40,22 +40,6 @@
 		text-decoration: if($link-hover-decoration == underline, none, null);
 	}
 
-	.btn-check:focus + &,
-	&:focus {
-		outline: 0;
-		box-shadow: $btn-focus-box-shadow;
-	}
-
-	.btn-check:checked + &,
-	.btn-check:active + &,
-	&:active,
-	&.active {
-		@include box-shadow($btn-active-box-shadow);
-
-		&:focus {
-			@include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
-		}
-	}
 
 	&:disabled,
 	&.disabled,
@@ -71,16 +55,54 @@
 // Alternate buttons
 //
 
-@each $color, $value in $theme-colors {
-	.btn-#{$color} {
-	@include button-variant($value, $value);
-	}
+.btn-default {
+	@include button-variant-sesha($yellow, $yellow);
+}
+.btn-primary {
+	@include button-variant-sesha($primary, $primary);
+}
+.btn-secondary {
+	@include button-variant-sesha($secondary, $secondary);
 }
 
-@each $color, $value in $theme-colors {
-	.btn-outline-#{$color} {
-	@include button-outline-variant($value);
-	}
+
+.btn-outline-default {
+	@include button-outline-variant($yellow);
+}
+.btn-outline-primary {
+	@include button-outline-variant($primary);
+}
+.btn-outline-secondary {
+	@include button-outline-variant($secondary);
+}
+
+
+.btn-success {
+	@include button-variant-sesha($success, $success);
+}
+.btn-outline-success {
+	@include button-outline-variant($success);
+}
+
+.btn-info {
+	@include button-variant-sesha($info, $info);
+}
+.btn-outline-info {
+	@include button-outline-variant($info);
+}
+
+.btn-warning {
+	@include button-variant-sesha($warning, $warning);
+}
+.btn-outline-warning {
+	@include button-outline-variant($warning);
+}
+
+.btn-danger {
+	@include button-variant-sesha($danger, $danger);
+}
+.btn-outline-danger {
+	@include button-outline-variant($danger);
 }
 
 

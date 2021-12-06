@@ -25,11 +25,15 @@ ul.products li.product {
 	.product__alternate-thumbnail,
 	.attachment-woocommerce_thumbnail {
 		margin: 0 auto;
-		height: 10vh;
-		min-height: 250px;
 		width: auto;
 		margin-bottom: $m-md;
+		@include media-breakpoint-up(md) {
+			height: 10vh;
+			min-height: 250px;
+		}
 	}
+
+
 	&:hover {
 		.woocommerce-loop-product__title {
 			color: $link-color;

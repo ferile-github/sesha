@@ -15,7 +15,7 @@ $filter-item-spacing : 5px;
 
 @mixin vertical-filters() {
 	.filter__item {
-		border-bottom: solid 1px $border-color;
+		border-bottom: solid $border-width $border-color;
 	}
 	.js-filter__panel  {
 		> * {
@@ -43,12 +43,12 @@ $filter-item-spacing : 5px;
 		.has-filters .site-sidebar {
 			position: sticky;
 			z-index: $zindex-filters-wrapper;
-			transform: translate3d(0, $masthead-height-reduced, 0) ;
+			transform: translate3d(0, $masthead-height, 0) ;
 		}
 	}
 	.admin-bar.has-horizontal-filters-layout.has-reduced-menu {
 		.has-filters .site-sidebar {
-			transform: translate3d(0, $masthead-height-reduced + $wordpress-admin-bar-height, 0) ;
+			transform: translate3d(0, $masthead-height + $wordpress-admin-bar-height, 0) ;
 		}
 	}
 
@@ -59,9 +59,10 @@ $filter-item-spacing : 5px;
 				flex: 1;
 				padding: $m-xs 0;
 				background: $white;
-				top: 0;
-				border-bottom: solid 1px $border-color;
+				top: -1px; // compensate for border
+				border-bottom: solid $border-width $border-color;
 				transition: 500ms linear all;
+				margin: 0; // reset side margin from columns
 			}
 			.js-filters-panel-wrapper {
 				display: flex;
@@ -74,7 +75,7 @@ $filter-item-spacing : 5px;
 				}
 					.filter__heading {
 						padding: $filter-spacing;
-						border: solid 1px transparent;
+						border: solid $border-width transparent;
 						position: relative;
 						z-index: $zindex-filters-button;
 						@include border-top-start-radius($border-radius);
@@ -95,7 +96,7 @@ $filter-item-spacing : 5px;
 
 						> * {
 							padding: $filter-spacing;
-							border: solid 1px $border-color;
+							border: solid $border-width $border-color;
 							background: $white;
 						}
 					}

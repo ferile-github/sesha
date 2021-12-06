@@ -12,6 +12,6 @@ $custom_logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 ?>
 <div class="custom-logo__wrapper" itemscope itemtype="http://schema.org/Organization">
 	<a href="<?php echo get_home_url(); ?>">
-	<?php printSiteBrandLogo( $custom_logo[0]); ?>
+		<?php if ($custom_logo) printSiteBrandLogo( $custom_logo[0] ) ?>
 	</a>
 </div>

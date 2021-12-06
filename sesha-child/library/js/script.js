@@ -127,27 +127,26 @@ const SB = {
 
 			// Category and Action are mandatory events. Some error handling for when these are not provided
 			if (data.gaCategory) {
-				tracking.eventCategory = data.gaCategory;
+				tracking.eventCategory = data.gaCategory; // [data-ga-category]
 			} else {
 				tracking.eventCategory = 'Event Category';
 			}
 			if (data.gaAction) {
-				tracking.eventAction = data.gaAction;
+				tracking.eventAction = data.gaAction; // [data-ga-action]
 			} else {
 				tracking.eventAction = 'Event Action';
 			}
 			// Some optional event labels
 			if (data.gaLabel) {
-				tracking.eventLabel = data.gaLabel;
+				tracking.eventLabel = data.gaLabel; // [data-ga-label]
 			}
 			// Optional numeric value. Has to be a number
 			if (data.gaValue && $.isNumeric(data.gaValue)) {
 				tracking.eventValue = data.gaValue;
 			}
 
-			// console.log(tracking);
-			ga('send', 'event', tracking);
-
+			gtag('event', 'click', tracking);
+			// ga('event', 'event', tracking); // Old method
 		});
 
 
@@ -212,7 +211,7 @@ const SB = {
 		// Mobile Flyout menu
 		// -----------------------------------------------------------
 		var cascadeLevel = 1;
-		$('#site-navigation').on('click', '.menu-item-has-children > .menu-main-link', (event) => {
+		SB.cache.navigation.on('click', '.menu-item-has-children > .menu-main-link', (event) => {
 			const $el = $(event.currentTarget),
 				$parent = $el.parent('li');
 
@@ -229,7 +228,7 @@ const SB = {
 
 		// Back Button - Mobile Flyout menu
 		// -----------------------------------------------------------
-		$('#site-navigation').on('click', '.js-menu-back-button', () => {
+		SB.cache.navigation.on('click', '.js-menu-back-button', () => {
 			SB.cache.navigation.removeClass('cascade-level-' + cascadeLevel);
 			cascadeLevel--;
 			SB.cache.navigation.addClass('cascade-level-' + cascadeLevel);

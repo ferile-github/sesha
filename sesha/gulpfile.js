@@ -21,5 +21,5 @@ gulp.task('copytheme', () => {
 });
 
 
-gulp.task('build', gulp.series('copytheme'));
-gulp.task('default', gulp.series('build'));
+gulp.task('build', gulp.parallel('copytheme'));
+gulp.task('default', gulp.parallel('build'));

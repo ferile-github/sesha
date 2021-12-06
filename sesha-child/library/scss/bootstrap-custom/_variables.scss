@@ -1,9 +1,6 @@
 //
 // Variables
 // --------------------------------------------------
-// Prefix for :root CSS variables
-$variable-prefix:             sb-;
-
 $wordpress-admin-bar-height: 32px;
 $wordpress-admin-bar-height-mobile: 46px;
 
@@ -15,9 +12,9 @@ $box-shadow-dropdown:         0 0.8rem 1rem rgba(0,0,0,.15);
 // Quickly modify global styling by enabling or disabling optional features.
 
 $enable-caret:                true;
-$enable-rounded:              true;
+$enable-rounded:              false;
 $enable-shadows:              false;
-$enable-gradients:            true;
+$enable-gradients:            false;
 $enable-transitions:          true;
 $enable-reduced-motion:       false;
 $enable-smooth-scroll:        true;
@@ -40,6 +37,8 @@ $body-color:                $gray-600;
 //
 // Font, line-height, and color for body text, headings, and more.
 $font-ubuntu: 				'Ubuntu', sans-serif;
+$custom-font:				'Custom Font';
+$font-custom-font: 			'#{$custom-font}', sans-serif;
 
 $font-family-base:			$font-ubuntu;
 $headings-font-family:		$font-family-base;
@@ -178,6 +177,11 @@ $btn-padding-y-lg:            $input-btn-padding-y-lg;
 $btn-padding-x-lg:            $input-btn-padding-x-lg;
 
 
+$btn-border-radius:           $border-radius;
+$btn-border-radius-sm:        $border-radius-sm;
+$btn-border-radius-lg:        $border-radius-lg;
+
+
 // Forms
 //
 //##
@@ -250,7 +254,7 @@ $grid-gutter-width:           1.5rem;
 $gutters: $spacers;
 
 // Container padding
-$container-padding-x: $grid-gutter-width / 2;
+$container-padding-x: $grid-gutter-width * 0.5;
 
 
 
@@ -412,6 +416,6 @@ $footer-link-color :     	$body-color;
 $slideshow_height: 400px;
 $slideshow_height_mobile: 300px;
 $slideshow_pos_x: 60%;
-$slideshow_pos_y: $slideshow_height/2;
+$slideshow_pos_y: $slideshow_height*0.5;
 
 

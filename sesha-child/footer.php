@@ -17,14 +17,7 @@
 	</div>
 </footer>
 
-
-<div class="overlay__mobile-menu"></div>
-<div id="modal-size-guide" class="sizing-guide__wrapper"></div>
-
-<div class="d-xs-block / d-sm-none d-md-none d-lg-none"></div>
-<div class="d-none d-sm-block / d-md-none d-lg-none"></div>
-<div class="d-none d-md-block / d-lg-none"></div>
-<div class="d-none d-lg-block"></div>
+<?php get_template_part('template-parts/footer/footer-parent'); ?>
 
 <?php wp_footer(); ?>
 

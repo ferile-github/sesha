@@ -28,7 +28,7 @@
 	.blog-sticky-sidebar-enabled {
 		.site-sidebar {
 			position: sticky;
-			top: calc(#{$masthead-height} + #{$grid-gutter-width} );
+			top: $masthead-height;
 		}
 	}
 	.blog-column-left {
